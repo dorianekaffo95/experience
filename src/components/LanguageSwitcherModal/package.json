@@ -1,0 +1,6 @@
+{
+  "name": "CurrencySwitcherModal",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./CurrencySwitcherModal.js"
+}

@@ -1,0 +1,54 @@
+.root {
+  margin: 0;
+}
+
+.navDropDown {
+  border: 0px;
+}
+
+.userAvatar {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border: 2px solid #c4c4c4;
+}
+
+.breakPointScreen {
+		display: none !important;
+}
+
+.nonBreakPointScreen {
+	display: block !important;
+}
+
+@media screen and (max-width: 1200px) {
+	.breakPointScreen {
+		display: block !important;
+	}
+	.nonBreakPointScreen {
+		display: none !important;
+	}
+}
+@media(max-width:1200px){
+	.newMenu{
+		 height: 100vh;
+		 background:#fff !important;
+		 overflow-y:scroll;
+	}
+	.newMenuDesign{
+		margin-top:20px;
+		border-top:1px solid #dce0e0;
+	}
+	
+	}
+	@media(min-width:768px) and (max-width:1200px){
+		.newMenu{
+			left:0;
+		}
+	
+	}
+	@media(max-width:767px){
+		.newMenuDesign{
+			margin-top:90px;
+		 }
+	}

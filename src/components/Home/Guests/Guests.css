@@ -1,0 +1,62 @@
+@import "../../../components/common.css";
+
+.fang-stroke {
+  stroke: #dbdbdb;
+  fill: transparent;
+}
+
+.fang-shape {
+  fill: #fff;
+}
+
+.fang {
+  position: absolute;
+  width: 20px;
+  height: 10px;
+  left: 22px;
+  z-index: 2;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+.ctn {
+  background: white;
+  border: 1px solid #dbdbdb;
+  position: absolute;
+  padding: 10px;
+  border-radius: 4px;
+  width: 100%;
+  z-index: 1;
+  margin-top: 20px;
+}
+
+.darkGrey {
+  color: #484848;
+}
+
+.relativePos {
+  position: relative;
+}
+
+.loadfield {
+  padding: none;
+  padding-left: 7px;
+  padding-right: 7px;
+}
+
+.vert-center {
+  transform: translateY(50%);
+  display: block;
+}
+
+.placeholder {
+  color: grey;
+  text-decoration: none;
+}
+
+.placeholder:hover {
+  color: grey;
+  cursor: default;
+}

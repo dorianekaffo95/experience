@@ -1,0 +1,15 @@
+@import "../../../../../components/common.css";
+
+.radio-btn {
+  margin: 2px;
+  height: 15px;
+  width: 15px;
+  vertical-align: text-bottom;
+}
+
+.radio-label {
+  margin-left: 10px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-weight: 100;
+}

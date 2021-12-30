@@ -1,0 +1,251 @@
+/* @import '../variables.css';
+
+.formControlSelect {
+  height: 53px;
+  border-radius: 2px;
+  margin-bottom: 8px;
+  font-size: 19px;
+  display: block;
+  overflow: hidden;
+  border: 1px solid #DBDBDB;
+  background-color: #fff;
+  color: #484848;
+  line-height: 24px; */
+/*Drop Down Caret Icon*/
+/*  appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%);
+  background-position:
+    calc(100% - 15px) calc(50% + 2px),    
+    calc(100% - 15px) calc(1em + 2px),    
+    calc(100% - 2.5em) 0.5em;
+  background-size:
+    5px 6px,
+    5px 6px,
+    1px 1.5em;
+  background-repeat: no-repeat;
+  /*Drop Down Caret Icon*/
+/* } */
+
+@import "../../components/variables.css";
+
+.root {
+  padding: 20px 32px 32px 32px;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0px;
+}
+
+/** RentAll - Begin **/
+
+.signupModalContainer {
+  max-width: 1008px;
+  width: 100%;
+  padding: 10px;
+}
+
+.signupModalBody {
+  padding: 10px;
+  text-align: center;
+}
+
+.formGroup {
+  margin-bottom: 6px;
+}
+
+.formSection {
+  overflow: hidden;
+}
+
+.modalCaptionLink {
+  color: #008489;
+}
+
+.modalCaptionLinkLarge {
+  font-size: 16px;
+  line-height: 32px;
+}
+
+.modalCaptionLink:hover,
+.modalCaptionLink:focus {
+  color: #008489;
+  text-decoration: underline;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+  color: #008489;
+}
+
+.button {
+  display: block;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 13px 16px;
+  width: 100%;
+  outline: 0;
+  border: 1px solid #373277;
+  border-radius: 4px;
+  background: #373277;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 1.3333333;
+  cursor: pointer;
+  white-space: normal;
+}
+
+.button:hover {
+  background: rgba(54, 50, 119, 0.8);
+}
+
+.button:focus {
+  border-color: #0074c2;
+  box-shadow: 0 0 8px rgba(0, 116, 194, 0.6);
+}
+
+.lineThrough {
+  position: relative;
+  z-index: 1;
+  display: block;
+  margin: 12px 0px;
+  width: 100%;
+  color: #767676;
+  text-align: center;
+  font-size: 14px;
+}
+
+.lineThrough::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  margin-top: -5px;
+  margin-left: -20px;
+  width: 40px;
+  height: 10px;
+  background-color: #fff;
+  content: "";
+}
+
+.lineThrough::after {
+  position: absolute;
+  top: 49%;
+  z-index: -2;
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  content: "";
+}
+
+.btnPrimary {
+  border-color: #ff5a5f;
+  background-color: #ff5a5f;
+  color: #fff;
+}
+
+.btnPrimary:hover,
+.btnPrimary:focus,
+.btnPrimary:active,
+.btnPrimary:active:hover,
+.btnPrimary:active:focus {
+  border-color: #ff7e82;
+  background-color: #ff7e82;
+  color: #fff;
+}
+
+.btnPrimaryBorder {
+  border-color: #ff5a5f;
+  color: #ff5a5f;
+  background-color: #fff;
+}
+
+.btnPrimaryBorder:hover,
+.btnPrimaryBorder:focus,
+.btnPrimaryBorder:active,
+.btnPrimaryBorder:active:hover,
+.btnPrimaryBorder:active:focus {
+  border-color: #ff7e82;
+  color: #ff7e82;
+  background-color: #fff;
+}
+
+.btnSmall {
+  padding: 5px 0px;
+}
+
+.horizontalLineThrough {
+  position: relative;
+  z-index: 1;
+  display: block;
+  margin: 15px 0px;
+  width: 100%;
+  color: #767676;
+  text-align: center;
+  font-size: 14px;
+}
+
+.captionText {
+  font-size: 16px;
+  color: #484848;
+  margin: 15px 0px;
+}
+
+.noPadding {
+  padding: 0px;
+}
+
+.noMargin {
+  margin: 0px;
+}
+
+.textAlignRight {
+  text-align: right;
+}
+
+.textAlignLeft {
+  text-align: left;
+}
+
+.textAlignCenter {
+  text-align: center;
+}
+
+.iconPosition {
+  display: inline-block;
+  margin: -2px 8px 0 0;
+}
+
+.element {
+  display: inline-block;
+  width: 100%;
+  height: 75px;
+  padding: 10px;
+  margin: 5px 0px;
+  border-radius: 2px;
+}
+
+.element:hover {
+  background-color: whitesmoke;
+  cursor: pointer;
+}
+
+.active {
+  border: 1px solid black;
+}
+
+@media screen and (max-width: 640px) {
+  .signupModalContainer {
+    margin: 0px auto;
+  }
+
+  .smSpace {
+    margin-bottom: 12px;
+  }
+}
