@@ -1,6 +1,14 @@
 # Visit My Cellar
 Experience section of the wider `Visit My Cellar` Project
 
+# Installation
+- Create database and load `vmc_dump.sql` dump in the database.
+- Create a Node environment file (`.env`) with the necessary environment variables. Don't forget to set the database credentials.
+- Install `nodejs@10.16.3` and perform `npm install` in root directory
+- Perform `npm run build` script to build project
+- Perform `num run serve` to start server
+- Access your application on [https://localhost:3000]{https://localhost:3000}
+
 # Configuration
 To configure your project the following variables need to be set. This is done by the creation of a Node Environment File (`.env`) file and setting the following parameters.
 
