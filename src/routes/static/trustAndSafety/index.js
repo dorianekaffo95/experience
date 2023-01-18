@@ -24,6 +24,7 @@ export default {
         resolve(require('./trustAndSafety.md'));
       }, 'trustAndSafety');
     });
+
     const resp = await fetch('/graphql', {
       method: 'post',
       headers: {
@@ -40,14 +41,21 @@ export default {
     const { data } = await resp.json();
 
     if (data && data.getEditStaticPage) {
+      // return {
+      //   title: 'Trust & Safety',
+      //   description: data.getEditStaticPage.metaDescription,
+      //   chunk: 'about',
+      //   component: <Layout><Page
+      //     html={data.getEditStaticPage.content}
+      //     title={data.getEditStaticPage.pageName}
+      //   /></Layout>,
+      // };
+
       return {
         title: 'Trust & Safety',
         description: data.getEditStaticPage.metaDescription,
         chunk: 'about',
-        component: <Layout><Page
-          html={data.getEditStaticPage.content}
-          title={data.getEditStaticPage.pageName}
-        /></Layout>,
+        component: <Layout><Page id={2} /></Layout>,
       };
 
     } else {

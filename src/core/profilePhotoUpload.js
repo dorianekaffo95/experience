@@ -66,7 +66,7 @@ const profilePhotoUpload = app => {
       sharp(file.path)
         .rotate()
         .resize(100, 100)
-        .crop(sharp.strategy.entropy)
+        .trim(sharp.strategy.entropy)
         .toFile(profilePhotouploadDir + 'small_' + file.filename, function (err, file) {
           if (file) {
             resolve(file)
@@ -82,7 +82,7 @@ const profilePhotoUpload = app => {
       sharp(file.path)
         .rotate()
         .resize(255, 255)
-        .crop(sharp.strategy.entropy)
+        .trim(sharp.strategy.entropy)
         .toFile(profilePhotouploadDir + 'medium_' + file.filename, function (err, file) {
           if (file) {
             resolve(file)

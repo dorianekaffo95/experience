@@ -95,6 +95,7 @@ class UserManagement extends React.Component {
     const { editUser, deleteUser, title, handleChange } = this.props;
     const { userManagement: { loading, userManagement } } = this.props;
     const { currentPage } = this.state;
+    const { formatMessage } = this.props.intl;
     let userType = 'admin';
 
     return (
@@ -184,7 +185,8 @@ class UserManagement extends React.Component {
                   defaultCurrent={1}
                   defaultPageSize={10}
                   change={this.paginationData}
-                  paginationLabel={'Users'}
+                  ofLabel={formatMessage(messages.of)}
+                  paginationLabel={formatMessage(messages.users)}
                 />
               </div>
             }

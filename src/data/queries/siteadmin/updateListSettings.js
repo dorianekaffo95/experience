@@ -69,6 +69,7 @@ const updateListSettings = {
             console.log("Setting type: ", itemName, itemDescription, otherItemName);
 
             if (settingType.dataValues.fieldType == 'stringType') {
+
               await translate([
                 {
                     id: `listSetting${id}.itemName`,

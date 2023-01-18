@@ -219,7 +219,8 @@ class MessageManagement extends React.Component {
                                     defaultCurrent={1}
                                     defaultPageSize={10}
                                     change={this.paginationData}
-                                    paginationLabel={'Messages'}
+                                    ofLabel={formatMessage(messages.of)}
+                                    paginationLabel={formatMessage(messages.messages)}
                                 />
                             </div>
                         }

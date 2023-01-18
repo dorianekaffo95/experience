@@ -81,6 +81,7 @@ class ReportManagement extends React.Component {
         const { data, title } = this.props;
         const { reportUserManagement: { loading, reportUserManagement } } = this.props;
         const { currentPage } = this.state;
+        const { formatMessage } = this.props.intl;
 
         return (
             <div className={cx(s.pagecontentWrapper)}>
@@ -190,7 +191,8 @@ class ReportManagement extends React.Component {
                                     defaultCurrent={1}
                                     defaultPageSize={10}
                                     change={this.paginationData}
-                                    paginationLabel={'Messages'}
+                                    ofLabel={formatMessage(messages.of)}
+                                    paginationLabel={formatMessage(messages.messages)}
                                 />
                             </div>
                         }

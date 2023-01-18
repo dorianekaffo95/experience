@@ -42,6 +42,8 @@ class ListingIntro extends React.Component {
       starRatingValue = Number(reviewsStarRating / reviewsCount);
     }
 
+    console.log("Data spoken languages: ", data.spokenLanguages);
+
     return (
       <div>
         <Row className={s.introPadding}>
@@ -180,7 +182,7 @@ class ListingIntro extends React.Component {
                         <div>
                           {data.spokenLanguages &&
                             (data.spokenLanguages.length > 0 ?
-                            data.spokenLanguages.map(element => element.listsettings.itemName)
+                            data.spokenLanguages.map(element => messages[`listSetting${element.spokenLanguageId}ItemName`] ? formatMessage(messages[`listSetting${element.spokenLanguageId}ItemName`]) : this.props.intl.messages[`listSetting${element.spokenLanguageId}.itemName`]) // formatMessageelement.listsettings.itemName)
                             .reduce((previousValue, currentValue) => `${previousValue}, ${currentValue}`) : 
                             formatMessage(messages.none))
                             }

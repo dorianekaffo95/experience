@@ -12,6 +12,7 @@ class CustomPagination extends Component {
         defaultPageSize: PropTypes.number.isRequired,
         change: PropTypes.any.isRequired,
         currentPage: PropTypes.number.isRequired,
+        ofLabel: PropTypes.string,
         paginationLabel: PropTypes.string
     };
 
@@ -31,14 +32,14 @@ class CustomPagination extends Component {
     }
 
     renderShowTotal(total, range) {
-        const { paginationLabel } = this.props;
+        const { ofLabel, paginationLabel } = this.props;
 
         return (
             <div className={s.resultsCount}>
                 <span>{range[0]}</span>
                 <span>&nbsp;–&nbsp;</span>
                 <span>{range[1]}</span>
-                <span>&nbsp;of&nbsp;</span>
+                <span>&nbsp;{ofLabel || 'of'}&nbsp;</span>
                 <span>{total}</span>
                 <span>&nbsp;{paginationLabel}</span>
             </div>

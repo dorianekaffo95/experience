@@ -36,6 +36,7 @@ class Link extends React.Component {
     }
 
     if (
+      this.props.to &&
       !this.props.to.startsWith("http:") &&
       !this.props.to.startsWith("https:")
     ) {

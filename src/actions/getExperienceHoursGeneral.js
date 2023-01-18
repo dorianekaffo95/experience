@@ -40,11 +40,14 @@ export function getExperienceHoursGeneral(listId, startDate, endDate, status) {
         fetchPolicy: "network-only",
       });
 
-      console.log("Experience hours: ", data);
       dispatch({
         type: GET_EXPERIENCE_HOURS_GENERAL_SUCCESS,
         experienceHours: data.getExperienceHours
       });
+
+      return {
+        data
+      };
     } catch (error) {
       dispatch({
         type: GET_EXPERIENCE_HOURS_GENERAL_ERROR,
@@ -54,7 +57,5 @@ export function getExperienceHoursGeneral(listId, startDate, endDate, status) {
       });
       return false;
     }
-
-    return true;
   };
 }

@@ -120,7 +120,7 @@ class CancellationPolicy extends Component {
                       return (
                         value.isEnable == 1 && (
                           <option value={value.id} key={key}>
-                            <FormattedMessage {...messages[`listSetting${value.id}ItemName`]} />
+                            { formatMessage(messages[`listSetting${value.id}ItemName`]) }
                           </option>
                         )
                       );

@@ -5,6 +5,9 @@ const client = new ApolloClient({
     uri: '/graphql',
     opts: {
       // Additional fetch options like `credentials` or `headers`
+      headers: {
+        'Authorization': 'Basic YWRtaW46c3VwZXJzZWNyZXQ=' 
+      },
       credentials: 'include'
     },
   }),

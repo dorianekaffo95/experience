@@ -182,7 +182,8 @@ class AdvanceNotice extends Component {
                         return (
                           value.isEnable == 1 && (
                             <option value={value.id} key={key}>
-                              {value.itemName}
+                              {formatMessage(messages[`listSetting${value.id}ItemName`])}
+                              {/* value.itemName */}
                             </option>
                           )
                         );

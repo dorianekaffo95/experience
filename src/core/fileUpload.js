@@ -107,8 +107,9 @@ const fileUpload = app => {
       sharp(files[0].path)
         .rotate()
         .resize(101, null)
-        .crop(sharp.strategy.entropy)
+        .trim(sharp.strategy.entropy)
         .toFile(fileuploadDir + 'small_' + files[0].filename, function (err) {
+          console.log("This is the files", fileuploadDir, files, err);
           if (files) {
             resolve(files)
           } else {
@@ -123,7 +124,7 @@ const fileUpload = app => {
       sharp(files[0].path)
         .rotate()
         .resize(300, null)
-        .crop(sharp.strategy.entropy)
+        .trim(sharp.strategy.entropy)
         .toFile(fileuploadDir + 'x_small_' + files[0].filename, function (err) {
           if (files) {
             resolve(files)
@@ -141,8 +142,9 @@ const fileUpload = app => {
           .rotate()
           .resize(450, null)
           .jpeg({ quality: 50 })
-          .crop(sharp.strategy.entropy)
+          .trim(sharp.strategy.entropy)
           .toFile(fileuploadDir + 'x_medium_' + files[0].filename, function (err) {
+            console.log("This is the files", fileuploadDir, files, err);
             if (files) {
               resolve(files)
             } else {
@@ -158,7 +160,7 @@ const fileUpload = app => {
           .rotate()
           .resize(900, null)
           .jpeg({ quality: 50 })
-          .crop(sharp.strategy.entropy)
+          .trim(sharp.strategy.entropy)
           .toFile(fileuploadDir + 'x_large_' + files[0].filename, function (err) {
             if (files) {
               resolve(files)
@@ -175,7 +177,7 @@ const fileUpload = app => {
           .rotate()
           .resize(1280, null)
           .jpeg({ quality: 50 })
-          .crop(sharp.strategy.entropy)
+          .trim(sharp.strategy.entropy)
           .toFile(fileuploadDir + 'xx_large_' + files[0].filename, function (err) {
             if (files) {
               resolve(files)
@@ -191,7 +193,7 @@ const fileUpload = app => {
         sharp(files[0].path)
           .rotate()
           .resize(60, null)
-          .crop(sharp.strategy.entropy)
+          .trim(sharp.strategy.entropy)
           .toFile(fileuploadDir + 'placeholder_' + files[0].filename, function (err) {
             if (files) {
               resolve(files)
@@ -210,7 +212,7 @@ const fileUpload = app => {
           .rotate()
           .resize(450, null)
           .png({ compressionLevel: 5, adaptiveFiltering: true, force: true })
-          .crop(sharp.strategy.entropy)
+          .trim(sharp.strategy.entropy)
           .toFile(fileuploadDir + 'x_medium_' + files[0].filename, function (err) {
             if (files) {
               resolve(files)
@@ -227,7 +229,7 @@ const fileUpload = app => {
           .rotate()
           .resize(900, null)
           .png({ compressionLevel: 5, adaptiveFiltering: true, force: true })
-          .crop(sharp.strategy.entropy)
+          .trim(sharp.strategy.entropy)
           .toFile(fileuploadDir + 'x_large_' + files[0].filename, function (err) {
             if (files) {
               resolve(files)
@@ -244,7 +246,7 @@ const fileUpload = app => {
           .rotate()
           .resize(1280, null)
           .png({ compressionLevel: 5, adaptiveFiltering: true, force: true })
-          .crop(sharp.strategy.entropy)
+          .trim(sharp.strategy.entropy)
           .toFile(fileuploadDir + 'xx_large_' + files[0].filename, function (err) {
             if (files) {
               resolve(files)
@@ -260,7 +262,7 @@ const fileUpload = app => {
         sharp(files[0].path)
           .rotate()
           .resize(48, null)
-          .crop(sharp.strategy.entropy)
+          .trim(sharp.strategy.entropy)
           .toFile(fileuploadDir + 'placeholder_' + files[0].filename, function (err) {
             if (files) {
               resolve(files)

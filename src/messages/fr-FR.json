@@ -1627,7 +1627,7 @@
     "id": "editForm.birthDayRequired",
     "description": "Birthday Required",
     "defaultMessage": "Birthday is required",
-    "message": "La date d'anniversaire est obligatoire",
+    "message": "La date de naissance est obligatoire",
     "files": [
       "src/components/siteadmin/EditUserForm/messages.js"
     ]
@@ -1987,7 +1987,7 @@
     "id": "ListSettingsForm.itemNameIsRequired",
     "description": "itemNameIsRequired",
     "defaultMessage": "Item name is required",
-    "message": "Le nom de l'élément est obligatoire",
+    "message": "Le nom de l'élément est requis",
     "files": [
       "src/components/WishLists/EditWishListGroupForm/messages.js",
       "src/components/WishLists/WishListGroupForm/messages.js",
@@ -2242,7 +2242,7 @@
     "id": "cellar.appAvailableOn",
     "description": "App available on",
     "defaultMessage": "App available on",
-    "message": "App disponible sur",
+    "message": "Application disponible sur",
     "files": [
       "src/locale/messages.js"
     ]
@@ -2349,7 +2349,7 @@
     "id": "cellar.descMinPrice",
     "description": "Details on the minimum total price",
     "defaultMessage": "That allows you to accept smaller groups in case of privates experiences if they are willing to pay the minimum price",
-    "message": "Cela vous permet d'accepter des groupes plus petits en cas d'expériences privées s'ils sont prêts à payer le prix minimum.",
+    "message": "Cela vous permet d'accepter des groupes plus petits dans le cas d'expériences privées s'ils sont prêts à payer le prix minimum.",
     "files": [
       "src/locale/messages.js"
     ]
@@ -2439,6 +2439,7 @@
     "id": "cellar.familyWelcomeMessage",
     "defaultMessage": "Do you welcome families?",
     "message": "Accueillez-vous les familles ?",
+    "description": "Message on family welcome step",
     "files": [
       "src/locale/messages.js"
     ]
@@ -2510,7 +2511,7 @@
     "id": "cellar.hours",
     "description": "Hours of booking",
     "defaultMessage": "Hours",
-    "message": "Heures",
+    "message": "Heures d'ouverture",
     "files": [
       "src/locale/messages.js"
     ]
@@ -2681,7 +2682,7 @@
     "id": "cellar.oil",
     "description": "Oil",
     "defaultMessage": "Oil",
-    "message": "Huile",
+    "message": "Pétrole",
     "files": [
       "src/locale/messages.js"
     ]
@@ -2726,6 +2727,7 @@
     "id": "cellar.ownerCareMessage",
     "defaultMessage": "Does one of the owners take care of the visits him/herself?",
     "message": "L'un des propriétaires s'occupe-t-il lui-même des visites ?",
+    "description": "Message on owner care step",
     "files": [
       "src/locale/messages.js"
     ]
@@ -2815,7 +2817,7 @@
     "id": "cellar.plusesIncluded",
     "description": "Pluses included",
     "defaultMessage": "Pluses Included",
-    "message": "Pluses inclus",
+    "message": "Plus Inclus",
     "files": [
       "src/locale/messages.js"
     ]
@@ -2824,7 +2826,7 @@
     "id": "cellar.pricesPerPersonWithVAT",
     "description": "Header for various prices",
     "defaultMessage": "Prices per person VAT included",
-    "message": "Prix par personne TVA incluse",
+    "message": "Prix par personne, TVA comprise",
     "files": [
       "src/locale/messages.js"
     ]
@@ -2932,7 +2934,7 @@
     "id": "cellar.spirits",
     "description": "Spirits",
     "defaultMessage": "Spirits",
-    "message": "Spiritueux",
+    "message": "Esprits",
     "files": [
       "src/locale/messages.js"
     ]
@@ -3210,7 +3212,7 @@
     "id": "cellar.to",
     "description": "To",
     "defaultMessage": "To",
-    "message": "Vers",
+    "message": "Pour",
     "files": [
       "src/locale/messages.js"
     ]
@@ -3228,7 +3230,7 @@
     "id": "cellar.weekends",
     "description": "Label for unavailability on week-ends",
     "defaultMessage": "Unavailable on week-ends",
-    "message": "Non disponible les week-ends",
+    "message": "Non disponible le week-end",
     "files": [
       "src/locale/messages.js"
     ]
@@ -3273,7 +3275,7 @@
     "id": "rentall.Expires",
     "description": "Expires",
     "defaultMessage": "Expires",
-    "message": "Expire",
+    "message": "Date d'expiration",
     "files": [
       "src/locale/messages.js"
     ]
@@ -3291,7 +3293,7 @@
     "id": "rentall.ListPlaceTipsTwo",
     "description": "List Plce Tips",
     "defaultMessage": "Guests will rent the entire place. Includes in-law units.",
-    "message": "Les invités loueront l'ensemble de la maison. Y compris les logements familiaux.",
+    "message": "Les invités loueront la totalité de la maison. Y compris les logements familiaux.",
     "files": [
       "src/locale/messages.js"
     ]
@@ -3849,7 +3851,7 @@
     "id": "rentall.back",
     "description": "Back button",
     "defaultMessage": "Back",
-    "message": "Retourner à",
+    "message": "Retourner",
     "files": [
       "src/locale/messages.js"
     ]
@@ -4074,7 +4076,7 @@
     "id": "rentall.bookingExpiredTitle",
     "description": "Booking expired",
     "defaultMessage": "Your booking request is expired",
-    "message": "Votre demande de réservation a expiré",
+    "message": "Votre demande de réservation est expirée",
     "files": [
       "src/locale/messages.js"
     ]
@@ -4659,7 +4661,7 @@
     "id": "rentall.confirmAccountNumberRequired",
     "description": "confirmAccountNumberRequired",
     "defaultMessage": "Confirm account number is required",
-    "message": "Confirmer le numéro de compte est obligatoire",
+    "message": "Confirmer le numéro de compte est nécessaire",
     "files": [
       "src/locale/messages.js"
     ]
@@ -4758,7 +4760,7 @@
     "id": "rentall.contactFormInformation",
     "description": "contactForm",
     "defaultMessage": "Contact & Support",
-    "message": "Contact et assistance",
+    "message": "Contacter l'assistance & ",
     "files": [
       "src/locale/messages.js"
     ]
@@ -4812,7 +4814,7 @@
     "id": "rentall.contactHostinfo3",
     "description": "Contact host instructions",
     "defaultMessage": "a little about yourself",
-    "message": "un peu de vous",
+    "message": "un peu de vous-même",
     "files": [
       "src/locale/messages.js"
     ]
@@ -5820,7 +5822,7 @@
     "id": "rentall.enableLabel",
     "description": "Enable",
     "defaultMessage": "Enable",
-    "message": "Activez",
+    "message": "Activer",
     "files": [
       "src/locale/messages.js"
     ]
@@ -6360,7 +6362,7 @@
     "id": "rentall.footerTerms",
     "description": "Footer Button",
     "defaultMessage": "Terms, Privacy & More",
-    "message": "Conditions, confidentialité et autres",
+    "message": "Conditions, confidentialité & Plus",
     "files": [
       "src/locale/messages.js"
     ]
@@ -6522,7 +6524,7 @@
     "id": "rentall.googleLogin",
     "description": "Log in with Google",
     "defaultMessage": "Log in with Google",
-    "message": "Connectez-vous avec Google",
+    "message": "Se connecter avec Google",
     "files": [
       "src/locale/messages.js"
     ]
@@ -6530,8 +6532,8 @@
   {
     "id": "rentall.gotIt",
     "description": "cookies Disclaimer Button",
-    "defaultMessage": "GOT IT",
-    "message": "GOT IT",
+    "defaultMessage": "Got it",
+    "message": "C'est fait",
     "files": [
       "src/locale/messages.js"
     ]
@@ -6666,7 +6668,7 @@
     "id": "rentall.helpFirstDesc1",
     "description": "Description",
     "defaultMessage": "Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s.",
-    "message": "Tout simplement le texte factice de l'industrie de l'impression et de la composition. Le Lorem Ipsum a été le texte factice standard de l'industrie depuis les années 1500.",
+    "message": "Tout simplement le texte factice de l'industrie de l'imprimerie et de la composition. Le Lorem Ipsum a été le texte factice standard de l'industrie depuis les années 1500.",
     "files": [
       "src/locale/messages.js"
     ]
@@ -7026,7 +7028,7 @@
     "id": "rentall.hostingBlocktitle",
     "description": "Hosting Block title",
     "defaultMessage": "There are 3 Lorem Ipsum generators",
-    "message": "Il existe 3 générateurs Lorem Ipsum",
+    "message": "Il existe 3 générateurs de Lorem Ipsum",
     "files": [
       "src/locale/messages.js"
     ]
@@ -7206,7 +7208,7 @@
     "id": "rentall.info3",
     "description": "info3",
     "defaultMessage": "Tell them what it’s like to have you as a guest or host: What’s your style of traveling? Of hosting?",
-    "message": "Dites-leur ce que c'est que de vous avoir comme invité ou hôte : Quel est votre style de voyage ? De l'accueil ?",
+    "message": "Dites-leur comment c'est de vous avoir comme invité ou hôte : Quel est votre style de voyage ? De l'accueil ?",
     "files": [
       "src/locale/messages.js"
     ]
@@ -7368,7 +7370,7 @@
     "id": "rentall.letYouGetReady",
     "description": "Let You Get Ready",
     "defaultMessage": "Let’s get you ready to become a host",
-    "message": "Préparez-vous à devenir un hôte.",
+    "message": "Préparons-nous à devenir un hôte.",
     "files": [
       "src/locale/messages.js"
     ]
@@ -7442,6 +7444,7 @@
     "defaultMessage": "Lists",
     "message": "Listes",
     "files": [
+      "src/components/siteadmin/ListingManagement/messages.js",
       "src/locale/messages.js"
     ]
   },
@@ -7485,7 +7488,7 @@
     "id": "rentall.localLawsFive",
     "description": "Lowcal Law",
     "defaultMessage": "Since you are responsible for your own decision to list or book, you should get comfortable with the applicable rules before listing on",
-    "message": "Étant donné que vous êtes responsable de votre propre décision d'inscrire ou de réserver, vous devez vous familiariser avec les règles applicables avant d'inscrire votre logement sur le site",
+    "message": "Étant donné que vous êtes responsable de votre décision d'inscrire ou de réserver, vous devriez vous familiariser avec les règles applicables avant d'inscrire votre logement sur le site",
     "files": [
       "src/locale/messages.js"
     ]
@@ -7746,7 +7749,7 @@
     "id": "rentall.messageAction2",
     "description": "View message",
     "defaultMessage": "about their listing",
-    "message": "au sujet de son annonce",
+    "message": "à propos de leur annonce",
     "files": [
       "src/locale/messages.js"
     ]
@@ -8502,7 +8505,7 @@
     "id": "rentall.notVerifiedDetails",
     "description": "Not verified information",
     "defaultMessage": "You haven't verified any of the below items",
-    "message": "Vous n'avez vérifié aucun des éléments ci-dessous.",
+    "message": "Vous n'avez vérifié aucun des éléments suivants",
     "files": [
       "src/locale/messages.js"
     ]
@@ -8700,7 +8703,7 @@
     "id": "rentall.pastReviewTitle",
     "description": "Review",
     "defaultMessage": "Past Reviews You’ve Written",
-    "message": "Commentaires antérieurs que vous avez écrits",
+    "message": "Critiques antérieures que vous avez écrites",
     "files": [
       "src/locale/messages.js"
     ]
@@ -8934,7 +8937,7 @@
     "id": "rentall.payoutFaq",
     "description": "Payout Method",
     "defaultMessage": "Visit the Payout FAQ",
-    "message": "Consultez la FAQ sur les paiements",
+    "message": "Visitez la FAQ sur les paiements",
     "files": [
       "src/locale/messages.js"
     ]
@@ -9402,7 +9405,7 @@
     "id": "rentall.pricingDescription",
     "description": "pricing description",
     "defaultMessage": "The present pricing must be the best price a guest can for the same experience. Evenly if they come directly in your location without booking. When the host doesn't respect this pricing rules, he will refund the price difference to the guests and put his futre collaboration with our website at risk",
-    "message": "Le prix actuel doit être le meilleur prix qu'un client puisse obtenir pour la même expérience. Même s'ils viennent directement dans votre établissement sans réserver. Si l'hôte ne respecte pas ces règles de prix, il remboursera la différence de prix aux clients et mettra en danger sa future collaboration avec notre site web.",
+    "message": "Le prix actuel doit être le meilleur prix qu'un client peut obtenir pour la même expérience. Même s'ils viennent directement dans votre établissement sans réserver. Si l'hôte ne respecte pas ces règles de prix, il remboursera la différence de prix aux clients et mettra en danger sa future collaboration avec notre site web.",
     "files": [
       "src/locale/messages.js"
     ]
@@ -9438,7 +9441,7 @@
     "id": "rentall.processFlowHeading",
     "description": "Process Flow Heading",
     "defaultMessage": "Earn Extra Money and Become a Host with Rentall",
-    "message": "Gagnez de l'argent supplémentaire et devenez un hôte avec Rentall",
+    "message": "Gagnez de l'argent et devenez un hôte avec Rentall",
     "files": [
       "src/locale/messages.js"
     ]
@@ -10167,7 +10170,7 @@
     "id": "rentall.saveAndContinue",
     "description": "Save & Continue",
     "defaultMessage": "Save & Continue",
-    "message": "Sauvegarder et continuer",
+    "message": "Enregistrer & Continuer",
     "files": [
       "src/locale/messages.js"
     ]
@@ -10212,7 +10215,7 @@
     "id": "rentall.search",
     "description": "Search",
     "defaultMessage": "Search",
-    "message": "Recherche",
+    "message": "Rechercher",
     "files": [
       "src/locale/messages.js"
     ]
@@ -10464,7 +10467,7 @@
     "id": "rentall.showNeighbourHood",
     "description": "Toggle Button",
     "defaultMessage": "Show NeighbourHood",
-    "message": "Montrer la maison du voisin",
+    "message": "Afficher la maison du voisin",
     "files": [
       "src/locale/messages.js"
     ]
@@ -11022,7 +11025,7 @@
     "id": "rentall.termsPrivacy",
     "description": "Menu item",
     "defaultMessage": "Terms & Privacy",
-    "message": "Conditions et confidentialité",
+    "message": "Conditions d'utilisation & Confidentialité",
     "files": [
       "src/locale/messages.js"
     ]
@@ -11301,7 +11304,7 @@
     "id": "rentall.trustSafety",
     "description": "Menu item",
     "defaultMessage": "Trust & Safety",
-    "message": "Confiance et sécurité",
+    "message": "Confiance & Sécurité",
     "files": [
       "src/locale/messages.js"
     ]
@@ -11715,7 +11718,7 @@
     "id": "rentall.whereLocated",
     "description": "Where’s your place located?",
     "defaultMessage": "Where’s your place located?",
-    "message": "Où est situé votre logement ?",
+    "message": "Où est situé votre établissement ?",
     "files": [
       "src/locale/messages.js"
     ]
@@ -12300,7 +12303,7 @@
     "id": "imageBanner.title",
     "description": "Image banner title",
     "defaultMessage": "Share the fruits of your laborr",
-    "message": "Partagez le fruit de votre travail",
+    "message": "Partagez le fruit de votre travailr",
     "files": [
       "src/locale/messages.js"
     ]
@@ -12345,7 +12348,7 @@
     "id": "listSetting133.itemName",
     "description": "List setting 133 item name",
     "defaultMessage": "Wine & Appetizer",
-    "message": "Vin et amuse-bouche",
+    "message": "Vin & Apéritif",
     "files": [
       "src/locale/messages.js"
     ]
@@ -12480,9 +12483,633 @@
     "id": "cellar.showMap",
     "description": "Show Map",
     "defaultMessage": "Show Map",
-    "message": "",
+    "message": "Afficher la carte",
     "files": [
       "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "staticPage1metaDescription",
+    "description": "Static page 1 meta description",
+    "defaultMessage": "About us",
+    "message": "A propos de nous"
+  },
+  {
+    "id": "staticPage2metaDescription",
+    "description": "Static page 2 meta description",
+    "defaultMessage": "Trust & Safety",
+    "message": "Confiance et sécurité"
+  },
+  {
+    "id": "staticPage3metaDescription",
+    "description": "Static page 3 meta description",
+    "defaultMessage": "Travel Credit",
+    "message": "Crédit voyage"
+  },
+  {
+    "id": "staticPage4metaDescription",
+    "description": "Static page 4 meta description",
+    "defaultMessage": "Terms & Privacy",
+    "message": "Conditions et confidentialité"
+  },
+  {
+    "id": "cellar.today",
+    "description": "Today label",
+    "defaultMessage": "Today",
+    "message": "Aujourd'hui",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "rentall.bookedLabel",
+    "description": "Listing Step3",
+    "defaultMessage": "Booked",
+    "message": "Réservé",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "rentall.notAvailableLabel",
+    "description": "Listing Step3",
+    "defaultMessage": "Not available",
+    "message": "Non disponible",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting103.itemName",
+    "description": "List setting 103 item name",
+    "defaultMessage": "Loud Music Not Allowed",
+    "message": "Musique forte non autorisée",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting125.itemName",
+    "description": "List setting 125 item name",
+    "defaultMessage": "Loud People are not allowed",
+    "message": "Les personnes bruyantes ne sont pas autorisées",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting127.itemName",
+    "description": "List setting 127 item name",
+    "defaultMessage": "Confirmed Email",
+    "message": "Courriel confirmé",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting128.itemName",
+    "description": "List setting 128 item name",
+    "defaultMessage": "Same day",
+    "message": "Même jour",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting45.itemName",
+    "description": "List setting 45 item name",
+    "defaultMessage": "Payment information",
+    "message": "Informations sur le paiement",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting46.itemName",
+    "description": "List setting 46 item name",
+    "defaultMessage": "Agree to your House Rules",
+    "message": "Accepter le règlement intérieur",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting47.itemName",
+    "description": "List setting 47 item name",
+    "defaultMessage": "Tell you their trip purpose",
+    "message": "Vous indiquer le but de leur voyage",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting48.itemName",
+    "description": "List setting 48 item name",
+    "defaultMessage": "Suitable for children (2-14 years)",
+    "message": "Convient aux enfants (2-14 ans)",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting49.itemName",
+    "description": "List setting 49 item name",
+    "defaultMessage": "Suitable for infants (Under 2 years)",
+    "message": "Convient aux nourrissons (moins de 2 ans)",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting50.itemName",
+    "description": "List setting 50 item name",
+    "defaultMessage": "Suitable for pets",
+    "message": "Convient aux animaux de compagnie",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting51.itemName",
+    "description": "List setting 51 item name",
+    "defaultMessage": "Smoking Not allowed",
+    "message": "Interdiction de fumer",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting52.itemName",
+    "description": "List setting 52 item name",
+    "defaultMessage": "Events or parties allowed",
+    "message": "Événements ou fêtes autorisés",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting58.itemName",
+    "description": "List setting 58 item name",
+    "defaultMessage": "1 day",
+    "message": "1 jour",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting59.itemName",
+    "description": "List setting 59 item name",
+    "defaultMessage": "2 days",
+    "message": "2 jours",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting60.itemName",
+    "description": "List setting 60 item name",
+    "defaultMessage": "3 days",
+    "message": "3 jours",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting61.itemName",
+    "description": "List setting 61 item name",
+    "defaultMessage": "7 days",
+    "message": "7 jours",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "cellar.of",
+    "description": "Of label",
+    "defaultMessage": "Of",
+    "message": "De",
+    "files": [
+      "src/components/siteadmin/ListingManagement/messages.js",
+      "src/components/siteadmin/UserManagement/messages.js",
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "cellar.users",
+    "description": "Users label",
+    "defaultMessage": "Users",
+    "message": "Utilisateurs",
+    "files": [
+      "src/components/siteadmin/UserManagement/messages.js",
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "cellar.approved",
+    "description": "Approved label",
+    "defaultMessage": "Approved",
+    "message": "Approuvé",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "cellar.bookingCompleted",
+    "description": "Completed reservation label",
+    "defaultMessage": "Reservation is completed",
+    "message": "La réservation est terminée",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "cellar.bookingCompletedMessage",
+    "description": "Completed reservation message",
+    "defaultMessage": "Reservation of your listing is completed.",
+    "message": "La réservation de votre inscription est terminée.",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "cellar.cancelledByGuest",
+    "description": "Cancelled by guest label",
+    "defaultMessage": "Cancelled by guest",
+    "message": "Annulé par l'invité",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "cellar.cancelledByHost",
+    "description": "Cancelled by host label",
+    "defaultMessage": "Cancelled by host",
+    "message": "Annulé par l'hôte",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "cellar.completed",
+    "description": "Completed label",
+    "defaultMessage": "Completed",
+    "message": "Complété",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "cellar.confirmed",
+    "description": "Confirmed label",
+    "defaultMessage": "Booking Confirmed",
+    "message": "Réservation confirmée",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "cellar.declined",
+    "description": "Declined label",
+    "defaultMessage": "Declined",
+    "message": "Refusé",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "cellar.expired",
+    "description": "Expired label",
+    "defaultMessage": "Booking Expired",
+    "message": "Réservation expirée",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "cellar.inquiry",
+    "description": "Inquiry label",
+    "defaultMessage": "Inquiry",
+    "message": "Demande de renseignements",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "cellar.intantBooking",
+    "description": "Instant Booking label",
+    "defaultMessage": "Booking Confirmed",
+    "message": "Réservation confirmée",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "cellar.pending",
+    "description": "Pending label",
+    "defaultMessage": "Pending",
+    "message": "En attente",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "cellar.preApproved",
+    "description": "Pre Approved label",
+    "defaultMessage": "Pre Approved",
+    "message": "Pré approuvé",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "cellar.requestToBook",
+    "description": "Request to book label",
+    "defaultMessage": "Request to book",
+    "message": "Demande de réservation",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "staticPage1content",
+    "description": "Static page 1 content",
+    "defaultMessage": "We are a team of young and talented individuals aiming to give the best of experiences.",
+    "message": "Nous sommes une équipe de personnes jeunes et talentueuses dont le but est d'offrir les meilleures expériences."
+  },
+  {
+    "id": "staticPage1headerTitle",
+    "description": "Static page 1 header title",
+    "defaultMessage": "About us",
+    "message": "A propos de nous"
+  },
+  {
+    "id": "staticPage2content",
+    "description": "Static page 2 content",
+    "defaultMessage": "Trust & Safety",
+    "message": "Confiance et sécurité"
+  },
+  {
+    "id": "staticPage2headerTitle",
+    "description": "Static page 2 header title",
+    "defaultMessage": "Trust & Safety",
+    "message": "Confiance et sécurité"
+  },
+  {
+    "id": "staticPage3content",
+    "description": "Static page 3 content",
+    "defaultMessage": "Travel Credit",
+    "message": "Crédit voyage"
+  },
+  {
+    "id": "staticPage3headerTitle",
+    "description": "Static page 3 header title",
+    "defaultMessage": "Travel Credit",
+    "message": "Crédit voyage"
+  },
+  {
+    "id": "staticPage4content",
+    "description": "Static page 4 content",
+    "defaultMessage": "Terms & Privacy",
+    "message": "Conditions générales et confidentialité"
+  },
+  {
+    "id": "staticPage4headerTitle",
+    "description": "Static page 4 header title",
+    "defaultMessage": "Terms & Privacy",
+    "message": "Conditions et confidentialité"
+  },
+  {
+    "id": "staticPage1.content",
+    "description": "Static page 1 content",
+    "defaultMessage": "We are a team of young and talented individuals aiming to give the best of experiences.",
+    "message": "Nous sommes une équipe d'individus jeunes et talentueux dont l'objectif est de donner le meilleur des expériences.",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "staticPage1.headerTitle",
+    "description": "Static page 1 header title",
+    "defaultMessage": "About us",
+    "message": "A propos de nous",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "staticPage1.metaDescription",
+    "description": "Static page 1 meta description",
+    "defaultMessage": "About us",
+    "message": "A propos de nous",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "staticPage2.content",
+    "description": "Static page 2 content",
+    "defaultMessage": "Trust & Safety",
+    "message": "Trust & Sécurité",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "staticPage2.headerTitle",
+    "description": "Static page 2 header title",
+    "defaultMessage": "Trust & Safety",
+    "message": "Trust & Sécurité",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "staticPage2.metaDescription",
+    "description": "Static page 2 meta description",
+    "defaultMessage": "Trust & Safety",
+    "message": "Trust & Sécurité",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "staticPage3.content",
+    "description": "Static page 3 content",
+    "defaultMessage": "Travel Credit",
+    "message": "Crédit voyage",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "staticPage3.headerTitle",
+    "description": "Static page 3 header title",
+    "defaultMessage": "Travel Credit",
+    "message": "Crédit voyage",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "staticPage3.metaDescription",
+    "description": "Static page 3 meta description",
+    "defaultMessage": "Travel Credit",
+    "message": "Crédit voyage",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "staticPage4.content",
+    "description": "Static page 4 content",
+    "defaultMessage": "Terms & Privacy",
+    "message": "Conditions d'utilisation & Privacy",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "staticPage4.headerTitle",
+    "description": "Static page 4 header title",
+    "defaultMessage": "Terms & Privacy",
+    "message": "Termes & Privacy",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "staticPage4.metaDescription",
+    "description": "Static page 4 meta description",
+    "defaultMessage": "Terms & Privacy",
+    "message": "Termes & Privacy",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "cellar.mailTheTeam",
+    "description": "Mail the team label",
+    "defaultMessage": "Mail the team",
+    "message": "Envoyer un mail à l'équipe",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting131.itemName",
+    "description": "List setting 131 item name",
+    "defaultMessage": "English",
+    "message": "Anglais",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting132.itemName",
+    "description": "List setting 132 item name",
+    "defaultMessage": "French",
+    "message": "Français",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting147.itemName",
+    "description": "List setting 147 item name",
+    "defaultMessage": "Italian",
+    "message": "Italien",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting148.itemName",
+    "description": "List setting 148 item name",
+    "defaultMessage": "German",
+    "message": "Allemand",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting149.itemName",
+    "description": "List setting 149 item name",
+    "defaultMessage": "Chinese",
+    "message": "Chinois",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting150.itemName",
+    "description": "List setting 150 item name",
+    "defaultMessage": "Spanish",
+    "message": "Espagnol",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting151.itemName",
+    "description": "List setting 151 item name",
+    "defaultMessage": "Hindi",
+    "message": "Hindi",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting152.itemName",
+    "description": "List setting 152 item name",
+    "defaultMessage": "Punjabi",
+    "message": "Punjabi",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting153.itemName",
+    "description": "List setting 153 item name",
+    "defaultMessage": "Bengali",
+    "message": "Bengali",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting154.itemName",
+    "description": "List setting 154 item name",
+    "defaultMessage": "Portuguese",
+    "message": "Portugais",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting155.itemName",
+    "description": "List setting 155 item name",
+    "defaultMessage": "Russian",
+    "message": "Russe",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting156.itemName",
+    "description": "List setting 156 item name",
+    "defaultMessage": "Japanese",
+    "message": "Japonais",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "cellar.selectCountryCode",
+    "description": "Select country code label",
+    "defaultMessage": "Select country code",
+    "message": "Sélectionnez le code du pays",
+    "files": [
+      "src/components/siteadmin/ListSettingsForm/messages.js"
     ]
   }
 ]

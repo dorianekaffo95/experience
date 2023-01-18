@@ -1,7 +1,8 @@
 import React, { Children } from 'react';
 import PropTypes from 'prop-types';
-import { IntlProvider, addLocaleData } from 'react-intl';
+import { IntlProvider } from 'react-intl';
 import deepForceUpdate from 'react-deep-force-update';
+
 // Constants
 import { googleMapAPI } from '../config';
 // Helpers
@@ -61,6 +62,7 @@ class App extends React.PureComponent {
       load: false,
       stripe: null
     }
+
   }
 
   static childContextTypes = ContextType;
@@ -69,27 +71,31 @@ class App extends React.PureComponent {
     return this.props.context;
   }
 
-  // componentWillMount() {
-  // if (typeof window === 'undefined') {
-  //   return;
-  // }
+  componentWillMount() {
+  if (typeof window === 'undefined') {
+    return;
+  }
 
-  // const googleMaps = (window.google) && (window.google.maps);
-  // if (!googleMaps) {
-  //   console.log('asdasdasd')
-  //   const getGoogleMapsAPIUrl = key => `https://maps.googleapis.com/maps/api/js?key=${key}&libraries=places`
-  //   const initGoogleMapsAPI = () => loadScriptAsync(getGoogleMapsAPIUrl(googleMapAPI));
-  //   return;
-  // }
-  // }
+  const googleMaps = (window.google) && (window.google.maps);
+  if (!googleMaps) {
+    const getGoogleMapsAPIUrl = key => `https://maps.googleapis.com/maps/api/js?key=${key}&libraries=places`
+    const initGoogleMapsAPI = () => loadScriptAsync(getGoogleMapsAPIUrl(googleMapAPI));
+    return;
+  }
+  }
 
   componentDidMount() {
 
     const store = this.props.context && this.props.context.store;
-    console.log("It came here to check the ip: store to be checked");
+
     if (store) {
-      console.log("It came here to check the ip: store OK");
-      store.dispatch(setLocaleByIP());
+      
+      // -- Check if language is already defined in cookies
+      console.log("Got default lang: ", document.cookie, !/lang=([a-zA-Z\-]*)/.test(document.cookie));
+      if (!/lang=([a-zA-Z\-]*)/.test(document.cookie)) {
+        store.dispatch(setLocaleByIP());
+      }
+
       this.unsubscribe = store.subscribe(() => {
         const state = store.getState();
         const newIntl = state.intl;
@@ -140,8 +146,6 @@ class App extends React.PureComponent {
     const { initialNow, locale, messages } = this.intl;
     const localeMessages = (messages && messages[locale]) || {};
     const { load } = this.state;
-
-    console.log("Selected locale messages: ", localeMessages, locale, load);
 
     if (load) {
       return (

@@ -95,6 +95,7 @@ const query = gql`
       plusesIncluded {
         plusId
         listsettings {
+          id
           itemName
           isEnable
           settingsType {
@@ -105,6 +106,7 @@ const query = gql`
       experienceTypes {
         experienceTypeId
         listsettings {
+          id
           itemName
           isEnable
           settingsType {
@@ -115,6 +117,7 @@ const query = gql`
       spokenLanguages {
         spokenLanguageId
         listsettings {
+          id
           itemName
           isEnable
           settingsType {
@@ -137,12 +140,15 @@ export function getListingData(listId) {
       type: GET_LISTING_DATA_START,
     });
     try {
+
       // Send Request to get listing data
       const { data } = await client.query({
         query,
         variables: { listId, preview: true },
         fetchPolicy: "network-only",
       });
+
+
       let formValues = null;
       let settingFieldsData = {};
       const amenities = [];
@@ -160,6 +166,7 @@ export function getListingData(listId) {
           settingFieldsData[item.listsettings.settingsType.typeName] =
             item.settingsId;
         });
+
         // Preparing for user amenities
         if (data.UserListing.userAmenities.length > 0) {
           data.UserListing.userAmenities.map((item, value) => {
@@ -169,6 +176,7 @@ export function getListingData(listId) {
             amenities,
           });
         }
+
         // Preparing for user safety amenities
         if (data.UserListing.userSafetyAmenities.length > 0) {
           data.UserListing.userSafetyAmenities.map((item, value) => {
@@ -179,7 +187,8 @@ export function getListingData(listId) {
           });
         }
 
-        // Preparing for user safety amenities
+
+        // Preparing for experience types
         if (data.UserListing.experienceTypes.length > 0) {
           data.UserListing.experienceTypes.map((item, value) => {
             experienceTypes.push(parseInt(item.experienceTypeId));
@@ -199,6 +208,7 @@ export function getListingData(listId) {
           });
         }
 
+
         // Preparing for plusesIncluded
         if (data.UserListing.spokenLanguages.length > 0) {
           data.UserListing.spokenLanguages.map((item, value) => {
@@ -209,6 +219,7 @@ export function getListingData(listId) {
           });
         }
 
+
         // Preparing for User Spaces
         if (data.UserListing.userSpaces.length > 0) {
           data.UserListing.userSpaces.map((item, value) => {
@@ -217,15 +228,16 @@ export function getListingData(listId) {
           settingFieldsData = Object.assign({}, settingFieldsData, { spaces });
         }
 
+
         bedTypes = data.UserListing.userBedsTypes;
         settingFieldsData = Object.assign({}, settingFieldsData, {
           bedTypes
         });
 
-
         if (data.UserListing.visitWithOwner) {
           extraFields.visitWithOwner = data.UserListing.visitWithOwner ? 'YES' : 'NO';
         }
+
 
         if (!data.UserListing.adultCapacity) {
           extraFields.adultCapacity = 1;
@@ -234,6 +246,7 @@ export function getListingData(listId) {
         if (!data.UserListing.teenCapacity) {
           extraFields.teemCapacity = 1;
         }
+
 
         if (!data.UserListing.childOrYoungerCapacity) {
           extraFields.childOrYoungerCapacity = 1;
@@ -245,6 +258,7 @@ export function getListingData(listId) {
 
         // Combining values for initializing the edit form
         formValues = Object.assign({}, data.UserListing, settingFieldsData, extraFields);
+
         if (formValues != null) {
           // Reinitialize the form values
           dispatch(initialize("ListPlaceStep1", formValues, true));

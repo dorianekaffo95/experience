@@ -6,7 +6,7 @@ import queryString from 'query-string';
 import { createPath } from 'history';
 import { addLocaleData } from 'react-intl';
 import en from 'react-intl/locale-data/en';
-import cs from 'react-intl/locale-data/cs';
+import de from 'react-intl/locale-data/de';
 import es from 'react-intl/locale-data/es';
 import it from 'react-intl/locale-data/it';
 import fr from 'react-intl/locale-data/fr';
@@ -17,9 +17,10 @@ import configureStore from './store/configureStore';
 import { updateMeta } from './core/DOMUtils';
 import { ErrorReporter, deepForceUpdate } from './core/devUtils';
 import createApolloClient from './core/createApolloClient';
+
 const apolloClient = createApolloClient();
 
-[en, es, it, fr, pt].forEach(addLocaleData);
+[de, en, es, it, fr, pt].forEach(addLocaleData);
 
 const store = configureStore(window.APP_STATE, { history, apolloClient });
 // Global (context) variables that can be easily accessed from any React component

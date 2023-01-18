@@ -37,6 +37,7 @@ class DateRange extends React.Component {
     listId: PropTypes.number.isRequired,
     formName: PropTypes.string.isRequired,
     maxDaysNotice: PropTypes.string.isRequired,
+    displayFormat: PropTypes.string,
     formatMessage: PropTypes.any,
   };
 
@@ -142,7 +143,7 @@ class DateRange extends React.Component {
 
   render() {
     const { focusedInput, startDate, endDate } = this.state;
-    const { minimumNights, maximumNights, blockedDates, maxDaysNotice } = this.props;
+    const { minimumNights, maximumNights, blockedDates, maxDaysNotice, displayFormat } = this.props;
     const { formatMessage } = this.props.intl;
     let condition, maximumEndDate;
     const today = moment();
@@ -184,6 +185,7 @@ class DateRange extends React.Component {
           endDateId={'It is Start date id'}
           minimumNights={0/*minimumNights > 0 ? minimumNights : 1*/}
           isDayBlocked={day => this.isDayBlocked(day)}
+          displayFormat={displayFormat}
           isOutsideRange={condition}
           hideKeyboardShortcutsPanel
           readOnly

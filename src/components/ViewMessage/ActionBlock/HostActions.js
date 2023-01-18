@@ -195,9 +195,10 @@ class HostActions extends Component {
 	completed() {
 		return (
 			<Panel className={cx(s.space5, s.contextPadding)}>
-				<h4><strong>Reservation is completed</strong></h4>
+				<h4><strong>
+					<FormattedMessage {...messages.bookingCompleted} /></strong></h4>
 				<p className={s.spaceTop2}>
-					Reservation of your listing is completed.
+					<FormattedMessage {...messages.bookingCompletedMessage} />
                 </p>
 			</Panel>
 		);

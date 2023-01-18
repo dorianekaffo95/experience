@@ -11,8 +11,11 @@ import {
 import cx from 'classnames';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Payment.css';
-import { FormattedMessage } from 'react-intl';
+import { injectIntl, FormattedMessage } from 'react-intl';
 import * as FontAwesome from 'react-icons/lib/fa';
+
+// Redux
+import { connect } from 'react-redux';
 
 // Component
 import PaymentDetails from './PaymentDetails';
@@ -278,7 +281,7 @@ class Payment extends Component {
                             {spokenLanguages && spokenLanguages.length > 0 && <FormattedMessage {...messages.experienceInLanguages} />}
                             {spokenLanguages &&
                             (spokenLanguages.length > 0 &&
-                            spokenLanguages.map(element => element.listsettings.itemName)
+                            spokenLanguages.map(element => messages[`listSetting${element.spokenLanguageId}ItemName`] ? <FormattedMessage {...messages[`listSetting${element.spokenLanguageId}ItemName`]} /> : this.props.messages[`listSetting${element.spokenLanguageId}.itemName`])  // element.listsettings.itemName)
                             .reduce((previousValue, currentValue) => `${previousValue}, ${currentValue}`)
                             )}
                           </li>
@@ -351,4 +354,10 @@ class Payment extends Component {
   }
 }
 
-export default withStyles(s)(Payment);
+const mapState = (state) => ({
+  messages: state.intl.messages
+});
+
+const mapDispatch = {}
+
+export default withStyles(s)(connect(mapState, mapDispatch)(Payment));

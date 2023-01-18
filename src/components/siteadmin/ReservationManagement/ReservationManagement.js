@@ -5,6 +5,7 @@ import { Table, Tr, Td } from 'reactable';
 import { connect } from 'react-redux';
 import { FormControl } from 'react-bootstrap';
 import { graphql, gql, compose } from 'react-apollo';
+import { injectIntl } from 'react-intl';
 
 // Redux Action
 import { viewReceiptAdmin } from '../../../actions/Reservation/viewReceiptAdmin';
@@ -25,6 +26,7 @@ import CustomPagination from '../../CustomPagination';
 
 //graphql
 import reservationsQuery from './reservationsQuery.graphql';
+import messages from '../../../locale/messages';
 
 class ReservationManagement extends React.Component {
 
@@ -166,6 +168,7 @@ class ReservationManagement extends React.Component {
     const { data, title, viewReceiptAdmin } = this.props;
     const { data: { getAllReservationAdmin, refetch } } = this.props;
     const { currentPage } = this.state;
+    const { formatMessage } = this.props.intl;
     let userType = 'host';
 
     return (
@@ -266,7 +269,8 @@ class ReservationManagement extends React.Component {
                   defaultCurrent={1}
                   defaultPageSize={10}
                   change={this.paginationData}
-                  paginationLabel={'Reservations'}
+                  ofLabel={formatMessage(messages.of)}
+                  paginationLabel={formatMessage(messages.panelReservation)}
                 />
               </div>
             }
@@ -289,6 +293,7 @@ const mapDispatch = {
 
 export default compose(
   withStyles(s),
+  injectIntl,
   connect(mapState, mapDispatch),
   graphql(reservationsQuery, {
     options: {

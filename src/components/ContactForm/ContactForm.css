@@ -178,10 +178,10 @@
 }
 
 .paperPlane {
-  position: absolute;
-  right: 0;
-  left: 90px;
-  bottom: 12px;
+  /* position: absolute;
+  right: 0; */
+  /* left: 90px; */
+  /* bottom: 12px; */
   color: #fff;
 }
 

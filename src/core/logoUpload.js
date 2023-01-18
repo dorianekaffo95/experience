@@ -90,7 +90,7 @@ const logoUpload = app => {
     // small - 50 * 50
     sharp(file.path)
       .resize(50, 50)
-      .crop(sharp.strategy.entropy)
+      .trim(sharp.strategy.entropy)
       .toFile(logouploadDir + 'small_' + file.filename, function (err) {
         console.log("Error from resizing files", err);
       });
@@ -98,7 +98,7 @@ const logoUpload = app => {
     // medium - 100 * 100
     sharp(file.path)
       .resize(100, 100)
-      .crop(sharp.strategy.entropy)
+      .trim(sharp.strategy.entropy)
       .toFile(logouploadDir + 'medium_' + file.filename, function (err) {
         console.log("Error from resizing files", err);
       });
@@ -121,7 +121,7 @@ const logoUpload = app => {
     // small - 50 * 50
     sharp(file.path)
       .resize(50, 50)
-      .crop(sharp.strategy.entropy)
+      .trim(sharp.strategy.entropy)
       .toFile(logouploadDir + 'small_' + file.filename, function (err) {
         console.log("Error from resizing files", err);
       });
@@ -129,7 +129,7 @@ const logoUpload = app => {
     // medium - 100 * 100
     sharp(file.path)
       .resize(100, 100)
-      .crop(sharp.strategy.entropy)
+      .trim(sharp.strategy.entropy)
       .toFile(logouploadDir + 'medium_' + file.filename, function (err) {
         console.log("Error from resizing files", err);
       });

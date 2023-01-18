@@ -45,8 +45,12 @@ class Logo extends Component {
                 {
                     homeLogo && location === '/' && !logoImage && layoutType != 2 &&
                     <img src={"/images/logo/" + homeLogo} className={cx(!showMenu ? 'displayBlock' : 'displayNone')}
-                        height={defaultHomeLogoHeight} width={defaultHomeLogoWidth}
+                        height={defaultHomeLogoHeight}
                     />
+                    /*<img src={"/images/logo/" + homeLogo} className={cx(!showMenu ? 'displayBlock' : 'displayNone')}
+                        height={defaultHomeLogoHeight} 
+                        width={defaultHomeLogoWidth}
+                    />*/
                 }
                 {
                     homeLogo && location === '/' && !logoImage && showMenu &&
@@ -55,22 +59,31 @@ class Logo extends Component {
                 {
                     homeLogo && location === '/' && logoImage && layoutType != 2 &&
                     <img src={"/images/logo/" + homeLogo} className={cx(!showMenu ? 'displayBlock' : 'displayNone')}
-                        height={defaultHomeLogoHeight} width={defaultHomeLogoWidth}
+                        height={defaultHomeLogoHeight}
                     />
+                    
+                    /* <img src={"/images/logo/" + homeLogo} className={cx(!showMenu ? 'displayBlock' : 'displayNone')}
+                        height={defaultHomeLogoHeight} width={defaultHomeLogoWidth}
+                    /> */
                 }
                 {
                     homeLogo && location === '/' && logoImage && layoutType == 2 &&
                     <img src={"/images/logo/" + logoImage} className={cx(!showMenu ? 'displayBlock' : 'displayNone')}
-                        height={defaultLogoHeight} width={defaultLogoWidth}
+                        height={defaultLogoHeight}
                     />
+                    /* <img src={"/images/logo/" + logoImage} className={cx(!showMenu ? 'displayBlock' : 'displayNone')}
+                        height={defaultLogoHeight} width={defaultLogoWidth}
+                    /> */
                 }
                 {
                     homeLogo && location === '/' && showMenu && logoImage &&
-                    <img src={"/images/logo/" + logoImage} height={defaultHomeLogoHeight} width={defaultHomeLogoWidth} />
+                    <img src={"/images/logo/" + logoImage} height={defaultHomeLogoHeight} />
+                    /* <img src={"/images/logo/" + logoImage} height={defaultHomeLogoHeight} width={defaultHomeLogoWidth} /> */
                 }
                 {
                     !homeLogo && location === '/' && logoImage &&
-                    <img src={"/images/logo/" + logoImage} height={defaultLogoHeight} width={defaultLogoWidth} />
+                    <img src={"/images/logo/" + logoImage} height={defaultLogoHeight} />
+                    /* <img src={"/images/logo/" + logoImage} height={defaultLogoHeight} width={defaultLogoWidth} /> */
                 }
                 {
                     !homeLogo && !logoImage && siteName != null && location !== '/' && <span className={cx(s.logoColor)}>{siteName}</span>
@@ -79,10 +92,10 @@ class Logo extends Component {
                     !homeLogo && !logoImage && siteName != null && location === '/' && <span className={cx(!showMenu ? s.whiteColor : s.logoColor)}>{siteName}</span>
                 }
                 {
-                    !homeLogo && !logoImage && siteName === null && <span className={s.logoColor}>Site Name</span>
+                    !homeLogo && !logoImage && siteName === null && <span className={s.logoColor}>{siteName}</span>
                 }
                 {
-                    logoImage && location !== '/' && <img src={"/images/logo/" + logoImage} height={defaultLogoHeight} width={defaultLogoWidth} />
+                    logoImage && location !== '/' && <img src={"/images/logo/" + logoImage} height={defaultLogoHeight} /> // <img src={"/images/logo/" + logoImage} height={defaultLogoHeight} width={defaultLogoWidth} />
                 }
                 {
                     !logoImage && homeLogo && location !== '/' && siteName != null && <span className={cx(s.logoColor)}>{siteName}</span>

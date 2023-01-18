@@ -81,7 +81,7 @@ class GuestRequirements extends Component {
                         <li key={key}>
                           <FontAwesome.FaCheck className={cx(s.checkIcon)} />
                           <span className={cx(s.landingStep3, s.space3)}>
-                            {item.itemName}
+                            <FormattedMessage {...messages[`listSetting${item.id}ItemName`]} />
                           </span>
                         </li>
                       )

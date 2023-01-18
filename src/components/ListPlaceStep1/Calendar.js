@@ -125,9 +125,10 @@ class Calendar extends Component {
             <div>
               <h3 className={s.landingContentTitle}><FormattedMessage {...messages.calendar} /></h3>
               <div className={s.lableWeight}>
-                <p className={cx(s.bookedWidth)}><span className={s.bookedColor}></span>Booked</p>
-                <p className={s.calenderColorText}><span className={s.notAvailableColor}></span>Not Available</p>
-                <p className={s.calenderColorText}><span className={s.availableColor}></span>Available</p>
+                <p className={cx(s.bookedWidth)}><span className={s.bookedColor}></span><FormattedMessage {...messages.bookedLabel} /></p>
+                <p className={s.calenderColorText}><span className={s.notAvailableColor}></span><FormattedMessage {...messages.notAvailableLabel} /></p>
+                <p className={s.calenderColorText}><span className={s.availableColor}></span>
+                <FormattedMessage {...messages.availableLabel} /></p>
                 {/* <p className={s.calenderColorText}><span className={s.specialColor}></span>Special Price</p> */}
               </div>
               <h3 className={s.landingStep3}>

@@ -129,10 +129,10 @@ class SpokenLanguages extends Component {
                   <Image style={{
                       height: "2em",
                       padding: "0px 10px"
-                    }} src={`/flags/${countryCodes[option.itemName].toLowerCase()}.svg`}
+                    }} src={`/flags/${option.otherItemName ? option.otherItemName.toLowerCase() : '_generic'}.svg`}
                     alt={option.itemName}
                   />
-                  <span style={{ fontWeight: 100 }}>{option.itemName}</span>
+                  <span style={{ fontWeight: 100 }}>{messages[`listSetting${option.id}ItemName`] ? formatMessage(messages[`listSetting${option.id}ItemName`]) : this.props.intl.messages[`listSetting${option.id}.itemName`]}</span>
                   {option.id === "Others" && othersSelected && (
                     <span>
                       <FormControl

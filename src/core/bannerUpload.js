@@ -67,7 +67,7 @@ const bannerUpload = app => {
     // Resized for home page - 655 * 345
     sharp(file.path)
       .resize(655, 345)
-      .crop(sharp.strategy.entropy)
+      .trim(sharp.strategy.entropy)
       .toFile(banneruploadDir + 'x_' + file.filename, function (err) {
         console.log("Error from resizing files", err);
       });

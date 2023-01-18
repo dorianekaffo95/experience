@@ -115,7 +115,7 @@ class Footer extends React.Component {
                       </li>
                       <li>
                         <Link
-                          to={"http://store.primusevent.com"}
+                          to={"http://store.visitmycellar.com"}
                           className={s.textLink}
                         >
                           <FormattedMessage {...messages.store} />

@@ -130,9 +130,9 @@ class InboxItem extends Component {
 		const { formatMessage } = this.props.intl;
 		const { account: { userId } } = this.props;
 		const { readMessage } = this.props;
-		let createdDate = createdAt != null ? moment(createdAt).format('MM/DD/YYYY') : '';
-		let start = startDate != null ? '(' + moment(startDate).format('MM/DD/YYYY') : '';
-		let end = endDate != null ? ' - ' + moment(endDate).format('MM/DD/YYYY') + ')' : '';
+		let createdDate = createdAt != null ? moment(createdAt).format('DD/MM/YYYY') : '';
+		let start = startDate != null ? '(' + moment(startDate).format('DD/MM/YYYY') : '';
+		let end = endDate != null ? ' - ' + moment(endDate).format('DD/MM/YYYY') + ')' : '';
 		let isRead;
 		if (userId !== sentBy && read === false) {
 			isRead = s.threadSubjectUnread;

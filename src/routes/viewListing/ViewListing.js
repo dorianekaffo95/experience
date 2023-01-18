@@ -2,6 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql, compose } from 'react-apollo';
+import moment from 'moment';
 
 // Translation
 import { FormattedMessage } from 'react-intl';
@@ -49,6 +50,7 @@ import Scroll from 'react-scroll'; // Imports all Mixins
 import messages from '../../locale/messages';
 
 import { openBookingModal } from '../../actions/BookingModal/modalActions';
+import { getExperienceHoursGeneral } from '../../actions/getExperienceHoursGeneral';
 
 // Or Access Link,Element,etc as follows
 let Link = Scroll.Link;
@@ -108,6 +110,30 @@ class ViewListing extends React.Component {
     },
     isAdmin: false
   }
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      hours: []
+    };
+  }
+
+  componentDidMount() {
+    this.getHours();
+  }
+
+  async getHours () {
+    const { getExperienceHoursGeneral, listId } = this.props;
+    let today = moment().format('YYYY-MM-DD');
+    let targetDate = moment(today).add(5, 'month').endOf('month').format('YYYY-MM-DD');
+    const { data } = await getExperienceHoursGeneral(listId, today, targetDate, 'available');
+
+    if (data && data.getExperienceHours && data.getExperienceHours.length > 0) {
+      this.setState({ hours: data.getExperienceHours });
+    }
+    // this.setState({ hours: data.getExperienceHours });
+  }
+
   render() {
     const { listId, title, getListingData: { loading, UserListing }, preview } = this.props;
     const { ListingBlockedDates } = this.props;
@@ -214,8 +240,9 @@ class ViewListing extends React.Component {
                             smallDevice={smallDevice}
                             loading={ListingBlockedDates.loading}
                             blockedDates={
-                              ListingBlockedDates.UserListing != null ?
-                                  ListingBlockedDates.UserListing.blockedDates : undefined
+                              this.state.hours
+                              // ListingBlockedDates.UserListing != null ?
+                              //     ListingBlockedDates.UserListing.blockedDates : undefined
                               // ListingBlockedDates.getBlockedDates && ListingBlockedDates.getBlockedDates.length > 0 ?
                               //   ListingBlockedDates.getBlockedDates : undefined
                             }
@@ -398,7 +425,8 @@ const mapState = (state) => ({
   isAdmin: state.runtime.isAdminAuthenticated
 });
 const mapDispatch = {
-  openBookingModal
+  openBookingModal,
+  getExperienceHoursGeneral
 };
 export default compose(
   withStyles(s),

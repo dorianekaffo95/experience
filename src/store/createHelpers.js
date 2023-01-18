@@ -45,6 +45,7 @@ function createGraphqlRequestWithoutApollo(fetchKnowingCookie) {
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
+        // 'Authorization': 'Basic YWRtaW46c3VwZXJzZWNyZXQ='
       },
       body: JSON.stringify({ query, variables }),
       credentials: 'include',
@@ -59,11 +60,13 @@ function createFetchKnowingCookie({cookie}) {
   if (!process.env.BROWSER) {
     return (url, options = {}) => {
       const isLocalUrl = /^\/($|[^/])/.test(url);
+      console.log('IN createFetchKnowingCookie: --------------------------------------  ', url, options, isLocalUrl);
 
       // pass cookie only for itself. We can't know cookies for other sites BTW
       if (isLocalUrl && options.credentials === 'include') {
         const headers = {
           ...options.headers,
+          "Authorization": 'Basic YWRtaW46c3VwZXJzZWNyZXQ=',
           cookie
         };
         return fetch(url, {

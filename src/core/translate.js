@@ -2,7 +2,9 @@
 // autoTranslate(args).catch(console.error);
 import deeplTranslate from 'deepl';
 import fs from 'fs';
-import { join } from 'path';
+import {
+  join
+} from 'path';
 import Promise from 'bluebird';
 import {
   locales,
@@ -29,19 +31,20 @@ if (!process.argv.includes('--keyFilename') && process.argv.length > 0) {
 }
 
 let translationText = "";
-let parsedLocaleData = [];
 let concernedKeys = [];
 
 function addNoTranslate(sourceString) {
   return sourceString
-    .replace("{", '<x>')
-    .replace("}", "</x>");
+    .replace(/{/g, '<x>')
+    .replace(/}/g, "</x>")
+    .replace(/&/g, "<x>&</x>");
 }
 
 function removeNoTranslate(sourceString) {
   return sourceString
-    .replace('<x>', "{")
-    .replace("</x>", "}");
+    .replace(/<x>&<\/x>/g, '&')
+    .replace(/<x>/g, "{")
+    .replace(/<\/x>/g, "}");
 }
 
 function getLocaleCode(locale) {
@@ -64,60 +67,55 @@ function getLocaleCode(locale) {
 }
 
 
-// merge messages to source files
-async function mergeToFile(locale, messages) {
+async function updateMessages(locale, messages, parsedLocaleData) {
 
-  const tResponse = await deeplTranslate({
-    free_api: true,
-    text: addNoTranslate(translationText),
-    source_lang: "EN",
-    target_lang: getLocaleCode(locale),
-    tag_handling: ['xml'],
-    ignore_tags: ['x'],
-    auth_key: translations.deepl.auth_key,
-  });
-  const translatedText = removeNoTranslate(tResponse.data.translations[0].text);
+  const relatedKeys = [...concernedKeys];
 
-  let transMsgs = {};
-
-  messages.forEach((msg) => {
-    let tMessage;
-    const regex = new RegExp(`<${msg.id}>(.*?)</${msg.id}>`);
-    const matches = regex.exec(translatedText);
-
-    if (matches != null && matches.length >= 2) {
-      tMessage = matches[1];
-    }
-    msg.message = tMessage || msg.defaultMessage;
-    transMsgs[msg.id] = tMessage || msg.defaultMessage;
-  });
-
-    parsedLocaleData.forEach((transObj) => {
-        if (transObj && concernedKeys.includes(transObj.id)) {
-            transObj.message = transMsgs[transObj.id];
-            concernedKeys.splice(concernedKeys.indexOf(transObj.id), 1);
-        }
+  let translatedText = '';
+  try {
+    const tResponse = await deeplTranslate({
+      free_api: true,
+      text: addNoTranslate(translationText),
+      // source_lang: "EN",
+      target_lang: getLocaleCode(locale),
+      tag_handling: ['xml'],
+      ignore_tags: ['x'],
+      auth_key: translations.deepl.auth_key,
     });
 
-    messages.forEach((msg) => {
-        if (concernedKeys.includes(msg.id)) {
-            parsedLocaleData.push(msg);
-        }
-    });
+    translatedText = removeNoTranslate(tResponse.data.translations[0].text);
+  } catch (e) {
+    translatedText = removeNoTranslate(translatedText);
+  }
 
-  await writeFile(join(CONTENT_DIR, `${locale}.json`), JSON.stringify(parsedLocaleData));
+  const localeData = parsedLocaleData.map((data) => {
+    if (relatedKeys.includes(data.id)) {
 
-}
+      relatedKeys.splice(relatedKeys.indexOf(data.id), 1);
 
-async function updateMessages(locale, messages) {
+      const regex = new RegExp(`<${data.id}>(.*?)</${data.id}>`);
+      const matches = regex.exec(translatedText);
 
-  messages.forEach((msg) => {
-      if (concernedKeys.includes(msg.id)) {
-        translationText += `<${msg.id}>${msg.message}</${msg.id}>`;
+      if (matches != null && matches.length >= 2) {
+        return {
+          ...data,
+          message: matches[1]
+        };
       }
+
+    }
+
+    return data;
   });
 
-  await mergeToFile(locale, messages);
+
+  messages.filter((msg) => relatedKeys.includes(msg.id)).forEach((msg) => {
+    // if (concernedKeys.includes(msg.id)) {
+    localeData.push(msg);
+    // }
+  });
+
+  await writeFile(join(CONTENT_DIR, `${locale}.json`), JSON.stringify(localeData));
 }
 
 /**
@@ -126,14 +124,22 @@ async function updateMessages(locale, messages) {
  */
 async function translate(messages) {
 
-    let localeData;
-    concernedKeys = messages.filter(msg => msg.defaultMessage && msg.message).map((msg) => msg.id);
-    locales.forEach(async (locale) => {
-        localeData = await readFile(join(CONTENT_DIR, `${locale}.json`));
-        parsedLocaleData = JSON.parse(localeData);
+  translationText = "";
+  let localeData;
+  concernedKeys = messages.filter(msg => msg.defaultMessage && msg.message).map((msg) => msg.id);
 
-        await updateMessages(locale, messages);
-    });
+  messages.forEach((msg) => {
+    if (concernedKeys.includes(msg.id)) {
+      translationText += `<${msg.id}>${msg.message}</${msg.id}>`;
+    }
+  });
+
+  locales.forEach(async (locale) => {
+    localeData = await readFile(join(CONTENT_DIR, `${locale}.json`));
+    const parsedLocaleData = JSON.parse(localeData);
+
+    await updateMessages(locale, messages, parsedLocaleData);
+  });
 
 }
 

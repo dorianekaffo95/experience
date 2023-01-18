@@ -4,6 +4,7 @@ import DropzoneComponent from 'react-dropzone-component';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from '!isomorphic-style-loader!css-loader!./filepicker.css';
 
+import { change } from 'redux-form';
 import { connect } from 'react-redux';
 import { startLogoUploaderLoader, doUploadLogo, doRemoveLogo } from '../../../../actions/siteadmin/manageLogo';
 
@@ -77,7 +78,8 @@ const mapState = (state) => ({});
 const mapDispatch = {
     doUploadLogo,
     doRemoveLogo,
-    startLogoUploaderLoader
+    startLogoUploaderLoader,
+    change
 };
 
 export default withStyles(s)(connect(mapState, mapDispatch)(Dropzone));

@@ -89,7 +89,10 @@ class HouseRules extends Component {
                   />
                 </span>
                 <span className={cx(s.checkBoxSection, s.checkBoxLabel)}>
-                  <label className={cx(s.checkboxLabel, s.noPadding)}>{option.itemName}</label>
+                  <label className={cx(s.checkboxLabel, s.noPadding)}>
+                    <FormattedMessage {...messages[`listSetting${option.id}ItemName`]} />
+                    {/* option.itemName */}
+                  </label>
                 </span>
               </li>
             )

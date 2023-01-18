@@ -146,7 +146,7 @@ class ContactForm extends Component {
                                             <h1 className={cx(s.contactTitle, s.subTitleText)}>
                                                 <FormattedMessage {...messages.contactFormEmail} />
                                             </h1>
-                                            <a href={"mailto:support@radicalstart.com"} className={s.linkText} target='_blank'>Mail the team</a>
+                                            <a href={"mailto:support@visitmycellar.com"} className={s.linkText} target='_blank'><FormattedMessage {...messages.mailTheTeam} /></a>
                                         </div>
                                     </div>
                                 </div>
@@ -176,7 +176,7 @@ class ContactForm extends Component {
                                             <FormattedMessage {...messages.contactFormAddress} />
                                         </h1>
                                         <h4 className={s.addressText}>
-                                            <a href={"mailto:support@radicalstart.com"} className={s.linkText} target='_blank'>Support@radicalstart.com</a>
+                                            <a href={"mailto:support@visitmycellar.com"} className={s.linkText} target='_blank'>support@visitmycellar.com</a>
                                         </h4>
                                     </div>
                                 </div>
@@ -258,12 +258,13 @@ class ContactForm extends Component {
                                             <Loader
                                                 type={"button"}
                                                 buttonType={"submit"}
-                                                className={cx(s.button, s.btnPrimary, s.btnlarge, s.paddingRight)}
+                                                className={cx(s.button, s.btnPrimary, s.btnlarge )}
                                                 disabled={submitting}
                                                 show={contactLoading}
                                                 label={formatMessage(messages.sendmail)}
-                                            />
-                                            <span className={s.paperPlane}><FontAwesome.FaPaperPlane /></span>
+                                            >
+                                                <span className={s.paperPlane}><FontAwesome.FaPaperPlane /></span>
+                                            </Loader>
                                         </Col>
                                     </Row>
                                 </form>

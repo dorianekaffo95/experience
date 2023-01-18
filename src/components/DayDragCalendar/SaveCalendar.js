@@ -187,9 +187,9 @@ class SaveCalendar extends Component {
           index={index}
           defaultStartDate={defaultStartDate}
           defaultEndDate={defaultEndDate}
+          displayFormat={"DD/MM/yyyy"}
           isCurrentStatus={isCurrentStatus}
           resetCalendar={resetCalendar}
-          // displayFormat={"DD/MM/YYYY"}
         />
       </div>
     );
@@ -290,26 +290,27 @@ class SaveCalendar extends Component {
       ) {
         // await change(formName, "blockedDates", updatedSelectedDays);
         await change("blockedDates", updatedSelectedDays);
-        await getListingDataStep3(listId);
-        await getListBlockedDates(
-          listId,
-          minNightValues,
-          maxNightValues,
-          checkInEndValue,
-          checkInStartValue,
-          houseRules,
-          isCancel,
-          isMaxDays,
-          isBooking,
-          basePrice,
-          cleaningPrice,
-          currency
-        );
-        await getListingDataStep3(listId);
-        await manageListingSteps(listId, 3);
+        // await getListingDataStep3(listId);
+        // await getListBlockedDates(
+        //   listId,
+        //   minNightValues,
+        //   maxNightValues,
+        //   checkInEndValue,
+        //   checkInStartValue,
+        //   houseRules,
+        //   isCancel,
+        //   isMaxDays,
+        //   isBooking,
+        //   basePrice,
+        //   cleaningPrice,
+        //   currency
+        // );
+        // await getListingDataStep3(listId);
+        // await manageListingSteps(listId, 3);
+        console.log("This is the range start: ", rangeStart);
         await getExperienceHoursGeneral(
           listId,
-          moment(rangeStart).set("date", 1)
+          moment().isAfter(moment(rangeStart).set("date", 1)) ? moment().format("YYYY-MM-DD") : moment(rangeStart).set("date", 1)
           .format("YYYY-MM-DD"),
           moment(rangeEnd || rangeStart).set("date", moment(rangeEnd || rangeStart).daysInMonth())
           .format("YYYY-MM-DD"),
@@ -366,8 +367,12 @@ class SaveCalendar extends Component {
     const convertEnd = end ? moment(end).format("YYYY-MM-DD") : null;
     let isBlock = 1,
       isAvailable = 2;
-    const numberParser = (number) =>
-      number ? number.replace(/^\d+(\.\d{1,2})?/g, "") : "";
+    const numberParser = (number) => {
+      return number && !isNaN(number) ? parseFloat(number) : 0.0;
+    }
+    const numberValidator = value => {
+      return !value || isNaN(value) ? 'Must be a number' : undefined;
+    }
 
     return (
       <div>
@@ -486,6 +491,7 @@ class SaveCalendar extends Component {
                       c.inputHeight
                     )}
                     parse={numberParser}
+                    validate={numberValidator}
                   />
                 </FormGroup>
               )}

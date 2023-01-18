@@ -66,6 +66,7 @@ export function getListingSteps(listId) {
         variables: { listId },
         fetchPolicy: 'network-only'
       });
+
       // Check if initial values already updated to the store
       const initialValuesLoaded = getState().location.initialValuesLoaded;
       const initialValuesLoadedStep2 = getState().location.initialValuesLoadedStep2;
@@ -74,7 +75,10 @@ export function getListingSteps(listId) {
       const step1DataIsLoaded = getState().location.step1DataIsLoaded;
       const step2DataIsLoaded = getState().location.step2DataIsLoaded;
       const step3DataIsLoaded = getState().location.step3DataIsLoaded;
+
+      console.log("Data: ------------ ", data, initialValuesLoaded, initialValuesLoadedStep2, initialValuesLoadedStep3, step1DataIsLoaded, step2DataIsLoaded, step3DataIsLoaded);
       if (data && data.showListingSteps) {
+        console.log("It came here: ", listId);
         // Assign steps data to a const
         const steps = data.showListingSteps;
         // Check if Step1Data is already loaded
@@ -117,6 +121,8 @@ export function getListingSteps(listId) {
             }
           }
         }
+
+        console.log("Near loader");
         // Update List Steps on the store & mark it as existing list
         dispatch({
           type: GET_LISTING_STEPS_DATA_SUCCESS,

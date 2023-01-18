@@ -1027,6 +1027,15 @@
     ]
   },
   {
+    "id": "cellar.approved",
+    "description": "Approved label",
+    "defaultMessage": "Approved",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
     "id": "cellar.arrival",
     "description": "Arrival",
     "defaultMessage": "Arrival",
@@ -1047,6 +1056,42 @@
     "id": "cellar.booking",
     "description": "Booking",
     "defaultMessage": "Booking",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "cellar.bookingCompleted",
+    "description": "Completed reservation label",
+    "defaultMessage": "Reservation is completed",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "cellar.bookingCompletedMessage",
+    "description": "Completed reservation message",
+    "defaultMessage": "Reservation of your listing is completed.",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "cellar.cancelledByGuest",
+    "description": "Cancelled by guest label",
+    "defaultMessage": "Cancelled by guest",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "cellar.cancelledByHost",
+    "description": "Cancelled by host label",
+    "defaultMessage": "Cancelled by host",
     "message": "",
     "files": [
       "src/locale/messages.js"
@@ -1107,6 +1152,24 @@
     ]
   },
   {
+    "id": "cellar.completed",
+    "description": "Completed label",
+    "defaultMessage": "Completed",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "cellar.confirmed",
+    "description": "Confirmed label",
+    "defaultMessage": "Booking Confirmed",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
     "id": "cellar.createStore",
     "description": "Creation of a store",
     "defaultMessage": "Create store",
@@ -1119,6 +1182,15 @@
     "id": "cellar.date",
     "description": "Label for date",
     "defaultMessage": "Date",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "cellar.declined",
+    "description": "Declined label",
+    "defaultMessage": "Declined",
     "message": "",
     "files": [
       "src/locale/messages.js"
@@ -1206,6 +1278,15 @@
     ]
   },
   {
+    "id": "cellar.expired",
+    "description": "Expired label",
+    "defaultMessage": "Booking Expired",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
     "id": "cellar.familyWelcome",
     "description": "Family Welcome",
     "defaultMessage": "Family Welcome",
@@ -1225,6 +1306,7 @@
   },
   {
     "id": "cellar.familyWelcomeMessage",
+    "description": "Message on family welcome step",
     "defaultMessage": "Do you welcome families?",
     "message": "",
     "files": [
@@ -1304,6 +1386,24 @@
     ]
   },
   {
+    "id": "cellar.inquiry",
+    "description": "Inquiry label",
+    "defaultMessage": "Inquiry",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "cellar.intantBooking",
+    "description": "Instant Booking label",
+    "defaultMessage": "Booking Confirmed",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
     "id": "cellar.kidPrice",
     "description": "Field label for kid price",
     "defaultMessage": "0-12 years old price",
@@ -1334,6 +1434,15 @@
     "id": "cellar.languages",
     "description": "Languages",
     "defaultMessage": "Languages",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "cellar.mailTheTeam",
+    "description": "Mail the team label",
+    "defaultMessage": "Mail the team",
     "message": "",
     "files": [
       "src/locale/messages.js"
@@ -1466,6 +1575,17 @@
     ]
   },
   {
+    "id": "cellar.of",
+    "description": "Of label",
+    "defaultMessage": "Of",
+    "message": "",
+    "files": [
+      "src/components/siteadmin/ListingManagement/messages.js",
+      "src/components/siteadmin/UserManagement/messages.js",
+      "src/locale/messages.js"
+    ]
+  },
+  {
     "id": "cellar.oil",
     "description": "Oil",
     "defaultMessage": "Oil",
@@ -1521,6 +1641,7 @@
   },
   {
     "id": "cellar.ownerCareMessage",
+    "description": "Message on owner care step",
     "defaultMessage": "Does one of the owners take care of the visits him/herself?",
     "message": "",
     "files": [
@@ -1582,6 +1703,15 @@
     ]
   },
   {
+    "id": "cellar.pending",
+    "description": "Pending label",
+    "defaultMessage": "Pending",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
     "id": "cellar.perPerson",
     "description": "Per person label",
     "defaultMessage": "Per Person",
@@ -1636,6 +1766,15 @@
     ]
   },
   {
+    "id": "cellar.preApproved",
+    "description": "Pre Approved label",
+    "defaultMessage": "Pre Approved",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
     "id": "cellar.pricesPerPersonWithVAT",
     "description": "Header for various prices",
     "defaultMessage": "Prices per person VAT included",
@@ -1684,6 +1823,15 @@
     "id": "cellar.regions",
     "description": "Regions header on home page",
     "defaultMessage": "Regions",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "cellar.requestToBook",
+    "description": "Request to book label",
+    "defaultMessage": "Request to book",
     "message": "",
     "files": [
       "src/locale/messages.js"
@@ -2040,6 +2188,25 @@
     ]
   },
   {
+    "id": "cellar.today",
+    "description": "Today label",
+    "defaultMessage": "Today",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "cellar.users",
+    "description": "Users label",
+    "defaultMessage": "Users",
+    "message": "",
+    "files": [
+      "src/components/siteadmin/UserManagement/messages.js",
+      "src/locale/messages.js"
+    ]
+  },
+  {
     "id": "cellar.vineyards",
     "description": "Label for vineyards",
     "defaultMessage": "Vineyards",
@@ -2151,6 +2318,42 @@
     "id": "imageBanner.title",
     "description": "Image banner title",
     "defaultMessage": "Share the fruits of your laborr",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting103.itemName",
+    "description": "List setting 103 item name",
+    "defaultMessage": "Loud Music Not Allowed",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting125.itemName",
+    "description": "List setting 125 item name",
+    "defaultMessage": "Loud People are not allowed",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting127.itemName",
+    "description": "List setting 127 item name",
+    "defaultMessage": "Confirmed Email",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting128.itemName",
+    "description": "List setting 128 item name",
+    "defaultMessage": "Same day",
     "message": "",
     "files": [
       "src/locale/messages.js"
@@ -2304,6 +2507,114 @@
     "id": "listSetting158.itemName",
     "description": "List setting 158 item name",
     "defaultMessage": "From 1 to 10 days",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting45.itemName",
+    "description": "List setting 45 item name",
+    "defaultMessage": "Payment information",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting46.itemName",
+    "description": "List setting 46 item name",
+    "defaultMessage": "Agree to your House Rules",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting47.itemName",
+    "description": "List setting 47 item name",
+    "defaultMessage": "Tell you their trip purpose",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting48.itemName",
+    "description": "List setting 48 item name",
+    "defaultMessage": "Suitable for children (2-14 years)",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting49.itemName",
+    "description": "List setting 49 item name",
+    "defaultMessage": "Suitable for infants (Under 2 years)",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting50.itemName",
+    "description": "List setting 50 item name",
+    "defaultMessage": "Suitable for pets",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting51.itemName",
+    "description": "List setting 51 item name",
+    "defaultMessage": "Smoking Not allowed",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting52.itemName",
+    "description": "List setting 52 item name",
+    "defaultMessage": "Events or parties allowed",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting58.itemName",
+    "description": "List setting 58 item name",
+    "defaultMessage": "1 day",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting59.itemName",
+    "description": "List setting 59 item name",
+    "defaultMessage": "2 days",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting60.itemName",
+    "description": "List setting 60 item name",
+    "defaultMessage": "3 days",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting61.itemName",
+    "description": "List setting 61 item name",
+    "defaultMessage": "7 days",
     "message": "",
     "files": [
       "src/locale/messages.js"
@@ -3114,6 +3425,15 @@
     "id": "rentall.bookNow",
     "description": "Booking button",
     "defaultMessage": "Book Now",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "rentall.bookedLabel",
+    "description": "Listing Step3",
+    "defaultMessage": "Booked",
     "message": "",
     "files": [
       "src/locale/messages.js"
@@ -5633,7 +5953,7 @@
   {
     "id": "rentall.gotIt",
     "description": "cookies Disclaimer Button",
-    "defaultMessage": "GOT IT",
+    "defaultMessage": "Got it",
     "message": "",
     "files": [
       "src/locale/messages.js"
@@ -6554,6 +6874,7 @@
     "defaultMessage": "Lists",
     "message": "",
     "files": [
+      "src/components/siteadmin/ListingManagement/messages.js",
       "src/locale/messages.js"
     ]
   },
@@ -7578,6 +7899,15 @@
     "id": "rentall.nonRefundable",
     "description": "Cancel your trip",
     "defaultMessage": "Non-Refundable",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "rentall.notAvailableLabel",
+    "description": "Listing Step3",
+    "defaultMessage": "Not available",
     "message": "",
     "files": [
       "src/locale/messages.js"
@@ -11235,6 +11565,231 @@
     "message": "",
     "files": [
       "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "staticPage1.content",
+    "description": "Static page 1 content",
+    "defaultMessage": "We are a team of young and talented individuals aiming to give the best of experiences.",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "staticPage1.headerTitle",
+    "description": "Static page 1 header title",
+    "defaultMessage": "About us",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "staticPage1.metaDescription",
+    "description": "Static page 1 meta description",
+    "defaultMessage": "About us",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "staticPage2.content",
+    "description": "Static page 2 content",
+    "defaultMessage": "Trust & Safety",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "staticPage2.headerTitle",
+    "description": "Static page 2 header title",
+    "defaultMessage": "Trust & Safety",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "staticPage2.metaDescription",
+    "description": "Static page 2 meta description",
+    "defaultMessage": "Trust & Safety",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "staticPage3.content",
+    "description": "Static page 3 content",
+    "defaultMessage": "Travel Credit",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "staticPage3.headerTitle",
+    "description": "Static page 3 header title",
+    "defaultMessage": "Travel Credit",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "staticPage3.metaDescription",
+    "description": "Static page 3 meta description",
+    "defaultMessage": "Travel Credit",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "staticPage4.content",
+    "description": "Static page 4 content",
+    "defaultMessage": "Terms & Privacy",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "staticPage4.headerTitle",
+    "description": "Static page 4 header title",
+    "defaultMessage": "Terms & Privacy",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "staticPage4.metaDescription",
+    "description": "Static page 4 meta description",
+    "defaultMessage": "Terms & Privacy",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting131.itemName",
+    "description": "List setting 131 item name",
+    "defaultMessage": "English",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting132.itemName",
+    "description": "List setting 132 item name",
+    "defaultMessage": "French",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting147.itemName",
+    "description": "List setting 147 item name",
+    "defaultMessage": "Italian",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting148.itemName",
+    "description": "List setting 148 item name",
+    "defaultMessage": "German",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting149.itemName",
+    "description": "List setting 149 item name",
+    "defaultMessage": "Chinese",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting150.itemName",
+    "description": "List setting 150 item name",
+    "defaultMessage": "Spanish",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting151.itemName",
+    "description": "List setting 151 item name",
+    "defaultMessage": "Hindi",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting152.itemName",
+    "description": "List setting 152 item name",
+    "defaultMessage": "Punjabi",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting153.itemName",
+    "description": "List setting 153 item name",
+    "defaultMessage": "Bengali",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting154.itemName",
+    "description": "List setting 154 item name",
+    "defaultMessage": "Portuguese",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting155.itemName",
+    "description": "List setting 155 item name",
+    "defaultMessage": "Russian",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "listSetting156.itemName",
+    "description": "List setting 156 item name",
+    "defaultMessage": "Japanese",
+    "message": "",
+    "files": [
+      "src/locale/messages.js"
+    ]
+  },
+  {
+    "id": "cellar.selectCountryCode",
+    "description": "Select country code label",
+    "defaultMessage": "Select country code",
+    "message": "",
+    "files": [
+      "src/components/siteadmin/ListSettingsForm/messages.js"
     ]
   }
 ]

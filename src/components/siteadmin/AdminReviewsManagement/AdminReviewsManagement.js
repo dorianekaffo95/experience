@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import { Table, Tr, Td } from 'reactable';
 import { connect } from 'react-redux';
+import { injectIntl } from 'react-intl';
 
 import { deleteAdminReview } from '../../../actions/siteadmin/AdminReviews/deleteAdminReview';
 import Link from '../../../components/Link';
@@ -97,6 +98,7 @@ class AdminReviewsManagement extends React.Component {
     const { editUser, deleteAdminReview, title } = this.props;
     const { currentPage } = this.state;
     const { reviewsManagement: { loading, reviewsManagement } } = this.props;
+    const { formatMessage } = this.props.intl;
 
     return (
       <div className={cx(s.pagecontentWrapper)}>
@@ -163,7 +165,8 @@ class AdminReviewsManagement extends React.Component {
                   defaultCurrent={1}
                   defaultPageSize={10}
                   change={this.paginationData}
-                  paginationLabel={'Reviews'}
+                  ofLabel={formatMessage(messages.of)}
+                  paginationLabel={formatMessage(messages.reviews)}
                 />
               </div>
             }
@@ -184,6 +187,7 @@ const mapDispatch = {
 
 export default compose(
   withStyles(s),
+  injectIntl,
   connect(mapState, mapDispatch),
   graphql(reviewsManagement, {
     name: 'reviewsManagement',

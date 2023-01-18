@@ -30,9 +30,11 @@ import messages from '../../../locale/messages';
 import { checkAvailability } from '../../../actions/checkAvailability';
 import { getBlockedDates } from '../../../actions/Listing/getBlockedDates';
 import { getExperienceHours } from '../../../actions/getExperienceHours';
+import { getExperienceHoursGeneral } from '../../../actions/getExperienceHoursGeneral';
 
 import CustomizableCalendarDay from './CustomizableCalendarDay';
 import CustomDayContents from './CustomDayContents';
+import { nullableTypeAnnotation } from 'babel-types';
 
 class AvailabilityCalendar extends React.Component {
   static propTypes = {
@@ -94,9 +96,11 @@ class AvailabilityCalendar extends React.Component {
       window.addEventListener('resize', this.handleResize);
 
     }
+    console.log("Hours: ", blockedDates);
     blockedDates.forEach(day => {
       // we save the unique timestamp of that day
-      blockedDatesSet.add(moment(day.blockedDates).format('YYYY-MM-DD'));
+      console.log("Day: ", day);
+      blockedDatesSet.add(moment(day.date).format('YYYY-MM-DD'));
     });
 
     this.setState({ blockedDatesSet });
@@ -114,8 +118,11 @@ class AvailabilityCalendar extends React.Component {
     const { blockedDatesSet } = this.state;
     blockedDates.forEach(day => {
       // we save the unique timestamp of that day
-      if (day.calendarStatus === 'available') {
-        blockedDatesSet.add(moment(day.blockedDates).format('YYYY-MM-DD'));
+      // if (day.calendarStatus === 'available') {
+      //   blockedDatesSet.add(moment(day.blockedDates).format('YYYY-MM-DD'));
+      // }
+      if (day.status === 'available') {
+        blockedDatesSet.add(moment(day.date).format('YYYY-MM-DD'));
       }
     });
 
@@ -171,21 +178,35 @@ class AvailabilityCalendar extends React.Component {
 
   async onNextMonthChange(e) {
     const { getBlockedDates, listId } = this.props;
+    const { getExperienceHoursGeneral } = this.props;
     const { blockedDatesSet } = this.state;
+
     let today = moment().format('YYYY-MM-DD');
     let navigationDate = moment(e).format('YYYY-MM-DD');
     let monthsDiff = moment(navigationDate).diff(moment(today), 'months');
     //const blockedDatesSet = new Set();
     if (monthsDiff && monthsDiff > 0) {
+      console.log("It came here: 1 ", Number(monthsDiff) % 5);
       let isRangedMonth = Number(monthsDiff) % 5;
       if (isRangedMonth === 0) {
-        const { data } = await getBlockedDates(listId, moment(navigationDate).startOf('month').format('YYYY-MM-DD'));
-        if (data && data.getBlockedDatesCalendar && data.getBlockedDatesCalendar.length > 0) {
-          data.getBlockedDatesCalendar.forEach(day => {
-            blockedDatesSet.add(moment(day.blockedDates).format('YYYY-MM-DD'));
+
+        const { data } = await getExperienceHoursGeneral(listId, today, moment(navigationDate).endOf('month').format('YYYY-MM-DD'), 'available');
+
+        if (data && data.getExperienceHours && data.getExperienceHours.length > 0) {
+          hours.getExperienceHours.forEach((hour) => {
+            blockedDatesSet.add(moment(hour.date).format('YYYY-MM-DD'));
           });
+
           this.setState({ blockedDatesSet });
         }
+
+        // const { data } = await getBlockedDates(listId, moment(navigationDate).startOf('month').format('YYYY-MM-DD'));
+        // if (data && data.getBlockedDatesCalendar && data.getBlockedDatesCalendar.length > 0) {
+        //   data.getBlockedDatesCalendar.forEach(day => {
+        //     blockedDatesSet.add(moment(day.blockedDates).format('YYYY-MM-DD'));
+        //   });
+        //   this.setState({ blockedDatesSet });
+        // }
       }
     }
   }
@@ -193,6 +214,9 @@ class AvailabilityCalendar extends React.Component {
   async onPrevMonthChange(e) {
     const { getBlockedDates, listId } = this.props;
     const { blockedDatesSet } = this.state;
+
+    console.log("navigationDate: back ", e);
+
     let today = moment().format('YYYY-MM-DD');
     let navigationDate = moment(e).format('YYYY-MM-DD');
     let monthsDiff = moment(navigationDate).diff(moment(today), 'months');
@@ -202,13 +226,25 @@ class AvailabilityCalendar extends React.Component {
     if (monthsDiff && monthsDiff > 0) {
       let isRangedMonth = Number(monthsDiff) % 4;
       if (isRangedMonth === 0) {
-        const { data } = await getBlockedDates(listId, moment(filterDate).startOf('month').format('YYYY-MM-DD'));
-        if (data && data.getBlockedDatesCalendar && data.getBlockedDatesCalendar.length > 0) {
-          data.getBlockedDatesCalendar.forEach(day => {
-            blockedDatesSet.add(moment(day.blockedDates).format('YYYY-MM-DD'));
+
+        const { data } = await getExperienceHoursGeneral(listId, today, moment(navigationDate).endOf('month').format('YYYY-MM-DD'), 'available');
+
+        if (data && data.getExperienceHours && data.getExperienceHours.length > 0) {
+          data.getExperienceHours.forEach((hour) => {
+            blockedDatesSet.add(moment(hour.date).format('YYYY-MM-DD'));
           });
+
           this.setState({ blockedDatesSet });
         }
+
+        // const { data } = await getBlockedDates(listId, moment(filterDate).startOf('month').format('YYYY-MM-DD'));
+        // if (data && data.getBlockedDatesCalendar && data.getBlockedDatesCalendar.length > 0) {
+        //   data.getBlockedDatesCalendar.forEach(day => {
+      
+        //     blockedDatesSet.add(moment(day.blockedDates).format('YYYY-MM-DD'));
+        //   });
+        //   this.setState({ blockedDatesSet });
+        // }
       }
     }
 
@@ -311,6 +347,7 @@ const mapDispatch = {
   checkAvailability,
   getBlockedDates,
   getExperienceHours,
+  getExperienceHoursGeneral,
 };
 
 export default injectIntl(withStyles(s, S)(connect(mapState, mapDispatch)(AvailabilityCalendar)));

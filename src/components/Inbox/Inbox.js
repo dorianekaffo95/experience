@@ -249,6 +249,7 @@ class Inbox extends React.Component {
                         defaultCurrent={1}
                         defaultPageSize={5}
                         change={this.paginationData}
+                        ofLabel={formatMessage(messages.of)}
                         paginationLabel={formatMessage(messages.messages)}
                       />
                     </div>

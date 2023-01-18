@@ -44,6 +44,10 @@ export function getExperienceHours(listId, startDate, endDate, status) {
       dispatch({
         type: GET_EXPERIENCE_HOURS_SUCCESS,
       });
+
+      return {
+        data
+      };
     } catch (error) {
       dispatch({
         type: GET_EXPERIENCE_HOURS_ERROR,

@@ -92,7 +92,7 @@ const locationUpload = app => {
       sharp(file.path)
         .rotate()
         .resize(250, null)
-        .crop(sharp.strategy.entropy)
+        .trim(sharp.strategy.entropy)
         .toFile(locationuploadDir + 'small_' + file.filename, function (err) {
           if (file) {
             resolve(file)
@@ -110,7 +110,7 @@ const locationUpload = app => {
           .rotate()
           .resize(450, null)
           .jpeg({ quality: 50 })
-          .crop(sharp.strategy.entropy)
+          .trim(sharp.strategy.entropy)
           .toFile(locationuploadDir + 'medium_' + file.filename, function (err) {
             if (file) {
               resolve(file)
@@ -128,7 +128,7 @@ const locationUpload = app => {
           .rotate()
           .resize(450, null)
           .png({ compressionLevel: 5, adaptiveFiltering: true, force: true })
-          .crop(sharp.strategy.entropy)
+          .trim(sharp.strategy.entropy)
           .toFile(locationuploadDir + 'medium_' + file.filename, function (err) {
             if (file) {
               resolve(file)

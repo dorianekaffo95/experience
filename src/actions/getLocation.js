@@ -40,6 +40,8 @@ export function getLocationData(address) {
         fetchPolicy: 'network-only'
       });
 
+      console.log("Get Location data", data);
+
       // Collect Current form data
       const formData = getState().form.ListPlaceStep1.values
 

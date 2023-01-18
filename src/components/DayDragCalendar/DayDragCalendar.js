@@ -28,6 +28,7 @@ import messages from '../../locale/messages';
 // Actions
 import { getExperienceHoursGeneral } from '../../actions/getExperienceHoursGeneral';
 import { deleteExperienceHour } from '../../actions/ExperienceHours/deleteExperienceHour';
+import { getBlockedDates } from "../../actions/Listing/getBlockedDates";
 
 class DayDragCalendar extends Component {
   static propTypes = {
@@ -246,10 +247,11 @@ class DayDragCalendar extends Component {
 
   getHours = async (month: Date) => {
     const { listId, getExperienceHoursGeneral } = this.props;
+    const currentDate = moment();
     const date = moment(month);
     await getExperienceHoursGeneral(
       listId,
-      date.format("YYYY-MM-DD"),
+      currentDate.isAfter(date) ? currentDate.format("YYYY-MM-DD") : date.format("YYYY-MM-DD"),
       date.set("date", date.daysInMonth())
         .format("YYYY-MM-DD"),
       null
@@ -258,7 +260,7 @@ class DayDragCalendar extends Component {
 
   removeHours = async (event, hour) => {
     
-    const {deleteExperienceHour, getExperienceHoursGeneral, listId} = this.props;
+    const {deleteExperienceHour, getBlockedDates, getExperienceHoursGeneral, listId} = this.props;
     const {month} = this.state;
 
     await deleteExperienceHour(
@@ -266,15 +268,16 @@ class DayDragCalendar extends Component {
       listId
     );
 
-    const date = moment(month);
+    const currentDate = moment();
+    const date = moment(month); 
     await getExperienceHoursGeneral(
       listId,
-      date.format("YYYY-MM-DD"),
+      currentDate.isAfter(date) ? currentDate.format("YYYY-MM-DD") : date.format("YYYY-MM-DD"),
       date.set("date", date.daysInMonth())
         .format("YYYY-MM-DD"),
       null
     );
-    console.log("Remove hours: ");
+    await getBlockedDates(listId);
   }
 
   render() {
@@ -293,8 +296,15 @@ class DayDragCalendar extends Component {
     const { cleaningPrice, basePrice, currency } = this.props;
     const { isStartDate, isEndDate } = this.props;
     const { startTime, endTime, duration } = this.props;
+    const { experienceHours } = this.props;
+    const { locale, formatMessage } = this.props.intl;
 
     let dateObj = new Date();
+
+    const avDates = [];
+    experienceHours.data && experienceHours.data.forEach((item) => {
+      avDates.push(new Date(item.date));
+    });
 
     // Where to define modifiers
     const modifiers = {
@@ -302,7 +312,7 @@ class DayDragCalendar extends Component {
       end: to,
       selected: selectedDays,
       selecting: dateRange,
-      available: availableDates,
+      available: avDates, // availableDates
       // bl: {daysOfWeek: [0, 6]}
     };
 
@@ -317,7 +327,8 @@ class DayDragCalendar extends Component {
             fromMonth={dateObj}
             renderDay={this.renderDay}
             localeUtils={MomentLocaleUtils}
-            todayButton="Today"
+            locale={locale}
+            todayButton={formatMessage(messages.today)}
             className={"BecomeCalendar"}
             onMonthChange={this.getHours}
           />
@@ -369,7 +380,8 @@ const mapState = (state) => ({
 const mapDispatch = {
   change,
   getExperienceHoursGeneral,
-  deleteExperienceHour
+  deleteExperienceHour,
+  getBlockedDates,
 };
 
 export default injectIntl(withStyles(s)(connect(mapState, mapDispatch)(DayDragCalendar)));

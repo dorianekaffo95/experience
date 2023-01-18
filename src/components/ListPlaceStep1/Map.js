@@ -56,7 +56,7 @@ class Map extends Component {
           {...input}
           lat={lat}
           lng={lng}
-          isMapTouched={isMapTouched}
+          isMapTouched
           mapWarning={mapWarning}
           mapSuccess={mapSuccess}
         />

@@ -44,11 +44,18 @@ export default {
     const { data } = await resp.json();
 
     if(data && data.getEditStaticPage ){
+      // return {
+      //   title: 'Terms & Privacy',
+      //   description:  data.getEditStaticPage.metaDescription,
+      //   chunk: 'about',
+      //   component: <Layout><Page html={data.getEditStaticPage.content} title={data.getEditStaticPage.pageName}/></Layout>,
+      // };
+
       return {
         title: 'Terms & Privacy',
-        description:  data.getEditStaticPage.metaDescription,
+        description: data.getEditStaticPage.metaDescription,
         chunk: 'about',
-        component: <Layout><Page html={data.getEditStaticPage.content} title={data.getEditStaticPage.pageName}/></Layout>,
+        component: <Layout><Page id={4} /></Layout>,
       };
 
     }else{

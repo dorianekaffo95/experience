@@ -1,4 +1,3 @@
-
 // polyfills
 import main from './client';
 

@@ -19,7 +19,14 @@ const TwilioSms = app => {
 
         try {
 
+            console.log("Twilio update verification code: ", verificationCode, userId);
             await updateVerificationCode(verificationCode, userId);
+
+            console.log("Twilio client messages: ", {
+                body: message,
+                from: sms.twilio.phoneNumber,
+                to: convertedNumber
+        });
 
             const responseData = await client.messages
                 .create({
@@ -29,11 +36,10 @@ const TwilioSms = app => {
                 });
 
         } catch (error) {
+            console.log("Twilio it came here: ", error.message);
             responseStatus = 400;
             errorMessage = error.message;
         }
-
-
 
         res.send({ status: responseStatus, errorMessage });
     });

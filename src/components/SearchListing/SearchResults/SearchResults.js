@@ -126,6 +126,7 @@ class SearchResults extends React.Component {
                       defaultCurrenct={1}
                       defaultPageSize={12}
                       handleChange={this.handlePagination}
+                      ofLabel={formatMessage(messages.of)}
                       paginationLabel={formatMessage(total > 1 ? messages.experiences : messages.experience)}
                     />
                   </div>

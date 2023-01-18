@@ -67,7 +67,7 @@ class ExistingPage1 extends Component {
   };
 
   gotoStore = () => {
-    window.location.href = "http://78.46.11.29:3000";
+    window.location.href = "http://store.visitmycellar.com";
   }
 
   render() {

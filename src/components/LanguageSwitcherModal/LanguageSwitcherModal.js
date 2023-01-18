@@ -58,7 +58,6 @@ class LanguageSwitcherModal extends React.Component {
 
   handleChange(event) {
     const { setLocale, closeLanguageSwitcherModal } = this.props;
-    console.log("Change locale event: ", event);
     setLocale({ locale: event });
     closeLanguageSwitcherModal();
   }
@@ -71,8 +70,6 @@ class LanguageSwitcherModal extends React.Component {
       intl: { formatMessage } 
     } = this.props;
     const { languageSwitcherModalStatus } = this.state;
-
-    console.log("Current locale: ", currentLocale, availableLocales);
 
     return (
       <div>

@@ -3,7 +3,6 @@ import Layout from '../../../components/Layout';
 import Page from '../../../components/Page';
 import fetch from '../../../core/fetch';
 
-
 const query = `query getEditStaticPage ($id: Int!) {
   getEditStaticPage (id: $id) {
       id
@@ -51,7 +50,7 @@ export default {
         title: 'About Us',
         description: data.getEditStaticPage.metaDescription,
         chunk: 'about',
-        component: <Layout><Page html={data.getEditStaticPage.content} title={data.getEditStaticPage.pageName} /></Layout>,
+        component: <Layout><Page id={1} /></Layout>,
       };
 
     } else {

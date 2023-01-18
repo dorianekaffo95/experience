@@ -4215,7 +4215,7 @@ const messages = defineMessages({
   },
   gotIt: {
     id: "rentall.gotIt",
-    defaultMessage: "GOT IT",
+    defaultMessage: "Got it",
     description: " cookies Disclaimer Button",
   },
   step1HeadingNew: {
@@ -4995,6 +4995,16 @@ const messages = defineMessages({
     defaultMessage: "Available",
     description: "Listing Step3",
   },
+  notAvailableLabel: {
+    id: "rentall.notAvailableLabel",
+    defaultMessage: "Not available",
+    description: "Listing Step3",
+  },
+  bookedLabel: {
+    id: "rentall.bookedLabel",
+    defaultMessage: "Booked",
+    description: "Listing Step3",
+  },
   blockLabel: {
     id: "rentall.blockLabel",
     defaultMessage: "Block",
@@ -5044,6 +5054,11 @@ const messages = defineMessages({
     id: "rentall.wineTypes",
     defaultMessage: "Wine Types",
     description: "Wine Types",
+  },
+  users: {
+    id: "cellar.users",
+    defaultMessage: "Users",
+    description: "Users label"
   },
   store: {
     id: "cellar.store",
@@ -5120,6 +5135,11 @@ const messages = defineMessages({
     defaultMessage: "Experience Types",
     description: "The different types of experiences",
   },
+  today: {
+    id: "cellar.today",
+    defaultMessage: "Today",
+    description: "Today label"
+  },
   hours: {
     id: "cellar.hours",
     defaultMessage: "Hours",
@@ -5154,6 +5174,11 @@ const messages = defineMessages({
     id: "cellar.from",
     defaultMessage: "From",
     description: "From",
+  },
+  of: {
+    id: "cellar.of",
+    defaultMessage: "Of",
+    description: "Of label"
   },
   to: {
     id: "cellar.to",
@@ -5313,12 +5338,12 @@ const messages = defineMessages({
   ownerCareMessage: {
     id: "cellar.ownerCareMessage",
     defaultMessage: "Does one of the owners take care of the visits him/herself?",
-    descripton: "Message on owner care step"
+    description: "Message on owner care step"
   },
   familyWelcomeMessage: {
     id: "cellar.familyWelcomeMessage",
     defaultMessage: "Do you welcome families?",
-    descrtipion: "Message on family welcome step"
+    description: "Message on family welcome step"
   },
   spokenLanguagesMessage: {
     id: "cellar.spokenLanguagesMessage",
@@ -5515,6 +5540,66 @@ const messages = defineMessages({
     defaultMessage: "No",
     description: "No"
   },
+  inquiry: {
+    id: "cellar.inquiry",
+    defaultMessage: "Inquiry",
+    description: "Inquiry label"
+  },
+  preApproved: {
+    id: "cellar.preApproved",
+    defaultMessage: "Pre Approved",
+    description: "Pre Approved label"
+  },
+  declined: {
+    id: "cellar.declined",
+    defaultMessage: "Declined",
+    description: "Declined label"
+  },
+  approved: {
+    id: "cellar.approved",
+    defaultMessage: "Approved",
+    description: "Approved label"
+  },
+  pending: {
+    id: "cellar.pending",
+    defaultMessage: "Pending",
+    description: "Pending label"
+  },
+  cancelledByHost: {
+    id: "cellar.cancelledByHost",
+    defaultMessage: "Cancelled by host",
+    description: "Cancelled by host label"
+  },
+  cancelledByGuest: {
+    id: "cellar.cancelledByGuest",
+    defaultMessage: "Cancelled by guest",
+    description: "Cancelled by guest label"
+  },
+  intantBooking: {
+    id: "cellar.intantBooking",
+    defaultMessage: "Booking Confirmed",
+    description: "Instant Booking label"
+  },
+  confirmed: {
+    id: "cellar.confirmed",
+    defaultMessage: "Booking Confirmed",
+    description: "Confirmed label"
+  },
+  expired: {
+    id: "cellar.expired",
+    defaultMessage: "Booking Expired",
+    description: "Expired label"
+  },
+  requestToBook: {
+    id: "cellar.requestToBook",
+    defaultMessage: "Request to book",
+    description: "Request to book label"
+  },
+  completed: {
+    id: "cellar.completed",
+    defaultMessage: "Completed",
+    description: "Completed label"
+  },
   select: {
     id: "cellar.select",
     defaultMessage: "Select",
@@ -5579,6 +5664,16 @@ const messages = defineMessages({
     id: "cellar.tastingPlace",
     defaultMessage: "Tasting place",
     description: "Label for tasting place"
+  },
+  bookingCompleted: {
+    id: "cellar.bookingCompleted",
+    defaultMessage: "Reservation is completed",
+    description: "Completed reservation label"
+  },
+  bookingCompletedMessage: {
+    id: "cellar.bookingCompletedMessage",
+    defaultMessage: "Reservation of your listing is completed.",
+    description: "Completed reservation message"
   },
   date: {
     id: "cellar.date",
@@ -5741,10 +5836,112 @@ const messages = defineMessages({
     defaultMessage: "(Please write us before booking)"
   },
 
+  mailTheTeam: {
+    id: "cellar.mailTheTeam",
+    description: "Mail the team label",
+    defaultMessage: "Mail the team"
+  },
+
   showMap: {
     id: "cellar.showMap",
     description: "Show Map",
     defaultMessage: "Show Map"
+  },
+
+  listSetting45ItemName: {
+    id: 'listSetting45.itemName',
+    description: 'List setting 45 item name',
+    defaultMessage: 'Payment information'
+  },
+
+  listSetting46ItemName: {
+    id: 'listSetting46.itemName',
+    description: 'List setting 46 item name',
+    defaultMessage: 'Agree to your House Rules'
+  },
+
+  listSetting47ItemName: {
+    id: 'listSetting47.itemName',
+    description: 'List setting 47 item name',
+    defaultMessage: 'Tell you their trip purpose'
+  },
+
+  listSetting48ItemName: {
+    id: 'listSetting48.itemName',
+    description: 'List setting 48 item name',
+    defaultMessage: 'Suitable for children (2-14 years)'
+  },
+
+  listSetting49ItemName: {
+    id: 'listSetting49.itemName',
+    description: 'List setting 49 item name',
+    defaultMessage: 'Suitable for infants (Under 2 years)'
+  },
+
+  listSetting50ItemName: {
+    id: 'listSetting50.itemName',
+    description: 'List setting 50 item name',
+    defaultMessage: 'Suitable for pets'
+  },
+
+  listSetting51ItemName: {
+    id: 'listSetting51.itemName',
+    description: 'List setting 51 item name',
+    defaultMessage: 'Smoking Not allowed'
+  },
+
+  listSetting52ItemName: {
+    id: 'listSetting52.itemName',
+    description: 'List setting 52 item name',
+    defaultMessage: 'Events or parties allowed'
+  },
+
+  listSetting58ItemName: {
+    id: 'listSetting58.itemName',
+    description: 'List setting 58 item name',
+    defaultMessage: '1 day'
+  },
+
+  listSetting59ItemName: {
+    id: 'listSetting59.itemName',
+    description: 'List setting 59 item name',
+    defaultMessage: '2 days'
+  },
+
+  listSetting60ItemName: {
+    id: 'listSetting60.itemName',
+    description: 'List setting 60 item name',
+    defaultMessage: '3 days'
+  },
+
+  listSetting61ItemName: {
+    id: 'listSetting61.itemName',
+    description: 'List setting 61 item name',
+    defaultMessage: '7 days'
+  },
+
+  listSetting103ItemName: {
+    id: 'listSetting103.itemName',
+    description: 'List setting 103 item name',
+    defaultMessage: 'Loud Music Not Allowed'
+  },
+
+  listSetting125ItemName: {
+    id: 'listSetting125.itemName',
+    description: 'List setting 125 item name',
+    defaultMessage: 'Loud People are not allowed'
+  },
+
+  listSetting127ItemName: {
+    id: 'listSetting127.itemName',
+    description: 'List setting 127 item name',
+    defaultMessage: 'Confirmed Email'
+  },
+
+  listSetting128ItemName: {
+    id: 'listSetting128.itemName',
+    description: 'List setting 128 item name',
+    defaultMessage: 'Same day'
   },
 
   listSetting129ItemName: {
@@ -5832,6 +6029,144 @@ const messages = defineMessages({
     id: 'listSetting158.itemName',
     description: 'List setting 158 item name',
     defaultMessage: 'From 1 to 10 days'
+  },
+
+  // Spoken languages
+  listSetting131ItemName: {
+    id: 'listSetting131.itemName',
+    description: 'List setting 131 item name',
+    defaultMessage: 'English'
+  },
+
+  listSetting132ItemName: {
+    id: 'listSetting132.itemName',
+    description: 'List setting 132 item name',
+    defaultMessage: 'French'
+  },
+
+  listSetting147ItemName: {
+    id: 'listSetting147.itemName',
+    description: 'List setting 147 item name',
+    defaultMessage: 'Italian'
+  },
+
+  listSetting148ItemName: {
+    id: 'listSetting148.itemName',
+    description: 'List setting 148 item name',
+    defaultMessage: 'German'
+  },
+
+  listSetting149ItemName: {
+    id: 'listSetting149.itemName',
+    description: 'List setting 149 item name',
+    defaultMessage: 'Chinese'
+  },
+
+  listSetting150ItemName: {
+    id: 'listSetting150.itemName',
+    description: 'List setting 150 item name',
+    defaultMessage: 'Spanish'
+  },
+
+  listSetting151ItemName: {
+    id: 'listSetting151.itemName',
+    description: 'List setting 151 item name',
+    defaultMessage: 'Hindi'
+  },
+
+  listSetting152ItemName: {
+    id: 'listSetting152.itemName',
+    description: 'List setting 152 item name',
+    defaultMessage: 'Punjabi'
+  },
+
+  listSetting153ItemName: {
+    id: 'listSetting153.itemName',
+    description: 'List setting 153 item name',
+    defaultMessage: 'Bengali'
+  },
+
+  listSetting154ItemName: {
+    id: 'listSetting154.itemName',
+    description: 'List setting 154 item name',
+    defaultMessage: 'Portuguese'
+  },
+
+  listSetting155ItemName: {
+    id: 'listSetting155.itemName',
+    description: 'List setting 155 item name',
+    defaultMessage: 'Russian'
+  },
+
+  listSetting156ItemName: {
+    id: 'listSetting156.itemName',
+    description: 'List setting 156 item name',
+    defaultMessage: 'Japanese'
+  },
+
+  // Static pages
+  staticPage1metaDescription: {
+    id: 'staticPage1.metaDescription',
+    description: 'Static page 1 meta description',
+    defaultMessage: 'About us'
+  },
+  staticPage1headerTitle: {
+    id: 'staticPage1.headerTitle',
+    description: 'Static page 1 header title',
+    defaultMessage: 'About us'
+  },
+  staticPage1content: {
+    id: 'staticPage1.content',
+    description: 'Static page 1 content',
+    defaultMessage: 'We are a team of young and talented individuals aiming to give the best of experiences.'
+  },
+
+  staticPage2metaDescription: {
+    id: 'staticPage2.metaDescription',
+    description: 'Static page 2 meta description',
+    defaultMessage: 'Trust & Safety'
+  },
+  staticPage2headerTitle: {
+    id: 'staticPage2.headerTitle',
+    description: 'Static page 2 header title',
+    defaultMessage: 'Trust & Safety'
+  },
+  staticPage2content: {
+    id: 'staticPage2.content',
+    description: 'Static page 2 content',
+    defaultMessage: 'Trust & Safety'
+  },
+
+  staticPage3metaDescription: {
+    id: 'staticPage3.metaDescription',
+    description: 'Static page 3 meta description',
+    defaultMessage: 'Travel Credit'
+  },
+  staticPage3headerTitle: {
+    id: 'staticPage3.headerTitle',
+    description: 'Static page 3 header title',
+    defaultMessage: 'Travel Credit'
+  },
+  staticPage3content: {
+    id: 'staticPage3.content',
+    description: 'Static page 3 content',
+    defaultMessage: 'Travel Credit'
+  },
+
+  staticPage4metaDescription: {
+    id: 'staticPage4.metaDescription',
+    description: 'Static page 4 meta description',
+    defaultMessage: 'Terms & Privacy'
+  },
+  staticPage4headerTitle: {
+    id: 'staticPage4.headerTitle',
+    description: 'Static page 4 header title',
+    defaultMessage: 'Terms & Privacy'
+  },
+  staticPage4content: {
+    id: 'staticPage4.content',
+    description: 'Static page 4 content',
+    defaultMessage: 'Terms & Privacy'
   },
 
 });

@@ -63,6 +63,7 @@ export function sendVerificationSms(countryCode, phoneNumber) {
                         }
                     });
                 } else {
+                    console.log("Error 1");
                     dispatch({
                         type: SEND_VERIFICATION_SMS_ERROR,
                         payload: {
@@ -78,6 +79,7 @@ export function sendVerificationSms(countryCode, phoneNumber) {
                     }
                 }
             } else {
+                console.log("Error 2");
                 dispatch({
                     type: SEND_VERIFICATION_SMS_ERROR,
                     payload: {
@@ -91,6 +93,7 @@ export function sendVerificationSms(countryCode, phoneNumber) {
                 };
             }
         } catch (error) {
+            console.log("Error 3");
             dispatch({
                 type: SEND_VERIFICATION_SMS_ERROR,
                 payload: {

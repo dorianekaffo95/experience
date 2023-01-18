@@ -97,6 +97,12 @@ const messages = defineMessages({
     defaultMessage: 'Limit Exceeded',
     description: 'exceedLimit',
   },
+  // Admin spoken languages
+  selectCountryCode: {
+    id: 'cellar.selectCountryCode',
+    description: 'Select country code label',
+    defaultMessage: 'Select country code'
+  },
 });
 
 export default messages;

@@ -43,17 +43,18 @@ async function writeMessages(fileName, msgs) {
   await writeFile(fileName, `${JSON.stringify(msgs, null, 2)}\n`);
 }
 
-
 function addNoTranslate(sourceString) {
   return sourceString
-    .replace("{", '<x>')
-    .replace("}", "</x>");
+    .replace(/{/g, '<x>')
+    .replace(/}/g, "</x>")
+    .replace(/&/g, "<x>&</x>");
 }
 
 function removeNoTranslate(sourceString) {
   return sourceString
-    .replace('<x>', "{")
-    .replace("</x>", "}");
+    .replace(/<x>&<\/x>/g, '&')
+    .replace(/<x>/g, "{")
+    .replace(/<\/x>/g, "}");
 }
 
 function getLocaleCode(locale) {
@@ -102,7 +103,6 @@ async function mergeToFile(locale, toBuild) {
 
   let i = 0
 
-  // console.log("Text to be translated: ", addNoTranslate(translationText));
   const tResponse = await deeplTranslate({
     free_api: true,
     text: addNoTranslate(translationText),
@@ -113,8 +113,6 @@ async function mergeToFile(locale, toBuild) {
     auth_key: translations.deepl.auth_key,
   });
   const translatedText = removeNoTranslate(tResponse.data.translations[0].text);
-
-  console.log("Translated text: ", translatedText);
 
   Object.keys(messages).forEach(async (id) => {
     const newMsg = messages[id];

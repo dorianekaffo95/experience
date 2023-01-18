@@ -11,6 +11,16 @@ const messages = defineMessages({
     defaultMessage: 'View',
     description: 'View Button',
   },
+  lists: {
+    id: "rentall.lists",
+    defaultMessage: "Lists",
+    description: "lists",
+  },
+  of: {
+    id: "cellar.of",
+    defaultMessage: "Of",
+    description: "Of label"
+  },
 
 });
 

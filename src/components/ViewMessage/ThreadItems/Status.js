@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import { injectIntl } from 'react-intl';
+
 import moment from 'moment';
 import cx from 'classnames';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from '../ViewMessage.css';
+
+import messages from '../../../locale/messages';
 
 class Status extends Component {
     static propTypes = {
@@ -18,31 +22,32 @@ class Status extends Component {
     };
 
     label(status) {
+        const { formatMessage } = this.props.intl;
         switch (status) {
             case 'inquiry':
-                return 'Inquiry';
+                return formatMessage(messages.inquiry); // 'Inquiry';
             case 'preApproved':
-                return 'Pre Approved';
+                return formatMessage(messages.preApproved); // 'Pre Approved';
             case 'declined':
-                return 'Declined';
+                return formatMessage(messages.declined); // 'Declined';
             case 'approved':
-                return 'Approved';
+                return formatMessage(messages.approved); // 'Approved';
             case 'pending':
-                return 'Pending';
+                return formatMessage(messages.pending); // 'Pending';
             case 'cancelledByHost':
-                return 'Cancelled by host';
+                return formatMessage(messages.cancelledByHost); // 'Cancelled by host';
             case 'cancelledByGuest':
-                return 'Cancelled by guest';
+                return formatMessage(messages.cancelledByGuest); // 'Cancelled by guest';
             case 'intantBooking':
-                return 'Booking Confirmed';
+                return formatMessage(messages.intantBooking); // 'Booking Confirmed';
             case 'confirmed':
-                return 'Booking Confirmed';
+                return formatMessage(messages.confirmed); // 'Booking Confirmed';
             case 'expired':
-                return 'Expired';
+                return formatMessage(messages.expired); // 'Expired';
             case 'requestToBook':
-                return 'Request to book';
+                return formatMessage(messages.requestToBook); // 'Request to book';
             case 'completed':
-                return 'Completed';
+                return formatMessage(messages.completed); // 'Completed';
         }
     }
 
@@ -62,5 +67,5 @@ class Status extends Component {
     }
 }
 
-export default withStyles(s)(Status);
+export default injectIntl(withStyles(s)(Status));
 

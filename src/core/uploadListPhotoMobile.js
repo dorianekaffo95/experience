@@ -59,7 +59,7 @@ const uploadListPhotoMobile = app => {
                             sharp(files[index].path)
                                 .rotate()
                                 .resize(101, null)
-                                .crop(sharp.strategy.entropy)
+                                .trim(sharp.strategy.entropy)
                                 .toFile(fileuploadDir + 'small_' + files[index].filename, function (err) {
                                     if (files) {
                                         resolve(files)
@@ -78,7 +78,7 @@ const uploadListPhotoMobile = app => {
                             sharp(files[index].path)
                                 .rotate()
                                 .resize(216, null)
-                                .crop(sharp.strategy.entropy)
+                                .trim(sharp.strategy.entropy)
                                 .toFile(fileuploadDir + 'x_small_' + files[index].filename, function (err) {
                                     if (files) {
                                         resolve(files)
@@ -96,7 +96,7 @@ const uploadListPhotoMobile = app => {
                             sharp(files[index].path)
                                 .rotate()
                                 .resize(450, null)
-                                .crop(sharp.strategy.entropy)
+                                .trim(sharp.strategy.entropy)
                                 .toFile(fileuploadDir + 'x_medium_' + files[index].filename, function (err) {
                                     if (files) {
                                         resolve(files)
@@ -114,7 +114,7 @@ const uploadListPhotoMobile = app => {
                             sharp(files[index].path)
                                 .rotate()
                                 .resize(900, null)
-                                .crop(sharp.strategy.entropy)
+                                .trim(sharp.strategy.entropy)
                                 .toFile(fileuploadDir + 'x_large_' + files[index].filename, function (err) {
                                     if (files) {
                                         resolve(files)
@@ -132,7 +132,7 @@ const uploadListPhotoMobile = app => {
                             sharp(files[index].path)
                                 .rotate()
                                 .resize(1280, null)
-                                .crop(sharp.strategy.entropy)
+                                .trim(sharp.strategy.entropy)
                                 .toFile(fileuploadDir + 'xx_large_' + files[index].filename, function (err) {
                                     if (files) {
                                         resolve(files)

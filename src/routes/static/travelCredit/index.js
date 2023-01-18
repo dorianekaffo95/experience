@@ -39,11 +39,18 @@ export default {
     const { data } = await resp.json();
 
     if(data && data.getEditStaticPage ){
+      // return {
+      //   title: 'Travel Credit',
+      //   description:  data.getEditStaticPage.metaDescription,
+      //   chunk: 'about',
+      //   component: <Layout><Page html={data.getEditStaticPage.content} title={data.getEditStaticPage.pageName}/></Layout>,
+      // };
+
       return {
         title: 'Travel Credit',
-        description:  data.getEditStaticPage.metaDescription,
+        description: data.getEditStaticPage.metaDescription,
         chunk: 'about',
-        component: <Layout><Page html={data.getEditStaticPage.content} title={data.getEditStaticPage.pageName}/></Layout>,
+        component: <Layout><Page id={3} /></Layout>,
       };
 
     }else{

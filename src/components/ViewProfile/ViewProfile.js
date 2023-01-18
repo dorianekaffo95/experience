@@ -56,8 +56,8 @@ class ViewProfile extends React.Component {
 
   render() {
 
-    const { data, isUser, loadMore, openReportUserModal, profileId, userData, isAuthenticate } = this.props;
-    let date = moment(data.createdAt).format('MMMM YYYY');
+    const { data, isUser, loadMore, openReportUserModal, profileId, userData, isAuthenticate, currentLocale } = this.props;
+    let date = moment(data.createdAt).locale(currentLocale).format('MMMM YYYY');
 
     return (
       <div className={cx(s.pageContainer, s.space2, s.spaceTop4, 'ViewProfile')}>
@@ -146,7 +146,8 @@ class ViewProfile extends React.Component {
 const mapState = (state) => ({
   listSettingsData: state.adminListSettingsData.data,
   userData: state.account.data,
-  isAuthenticate: state.runtime.isAuthenticated
+  isAuthenticate: state.runtime.isAuthenticated,
+  currentLocale: state.intl.locale,
 });
 
 const mapDispatch = {

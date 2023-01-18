@@ -54,6 +54,8 @@ async function submit(values, dispatch) {
 
   const { data } = await resp.json();
 
+  console.log("This is the error: ", data);
+
   if (data.addListSettings.status === "success") {
     dispatch(closeListSettingsModal());
     dispatch(getAdminListingSettings(values.typeId));

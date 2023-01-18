@@ -15,6 +15,7 @@ class ButtonLoader extends Component {
     label: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
     show: PropTypes.bool.isRequired,
+    children: PropTypes.node,
     handleClick: PropTypes.any,
     className: PropTypes.string,
     disabled: PropTypes.bool,
@@ -29,7 +30,7 @@ class ButtonLoader extends Component {
   };
 
   render() {
-    const { label, show, type, handleClick, className, disabled, spinnerColor } = this.props;
+    const { label, show, type, handleClick, className, disabled, spinnerColor, children } = this.props;
     let isDisabled = false;
     if (show || disabled) {
       isDisabled = true;
@@ -48,6 +49,7 @@ class ButtonLoader extends Component {
           />
         }
         &nbsp;{label}
+        {children}
       </Button>
     );
   }

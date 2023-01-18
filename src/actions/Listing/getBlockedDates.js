@@ -1,4 +1,5 @@
 import { gql } from 'react-apollo';
+import { change } from 'redux-form';
 
 import {
     GET_BLOCKED_DATE_START,
@@ -7,15 +8,15 @@ import {
 } from '../../constants';
 
 const query = gql`
-    query ($listId: Int!, $filterDate: String) {
-        getBlockedDatesCalendar(listId: $listId, filterDate: $filterDate) {
+    query ($listId: Int!) {
+        getBlockedDates(listId: $listId) {
             listId
             blockedDates
         }
     }
-`;
+`
 
-export function getBlockedDates(listId, filterDate) {
+export function getBlockedDates(listId) {
 
     return async(dispatch, getState, {client}) => {
         dispatch({
@@ -29,10 +30,19 @@ export function getBlockedDates(listId, filterDate) {
             const { data } = await client.query({
                 query,
                 variables: {
-                  listId,
-                  filterDate
+                  listId
                 },
             });
+
+            const blockedDates = [];
+
+            data.getBlockedDates.forEach((item) => {
+                blockedDates.push(new Date(item.blockedDates));
+            });
+
+            console.log("Selected dates: ", data.getBlockedDates, blockedDates);
+
+            await dispatch(change('ListPlaceStep3', 'availableDates', blockedDates));
 
             dispatch({
                 type: GET_BLOCKED_DATE_SUCCESS, 

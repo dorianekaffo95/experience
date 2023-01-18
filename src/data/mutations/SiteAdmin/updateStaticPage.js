@@ -42,13 +42,13 @@ const updateStaticPage = {
                         message: metaTitle
                     },
                     {
-                        id: `staticPage${id}.headerTitle`,
+                        id: `staticPage${id}.metaDescription`,
                         description: `Static page ${id} meta description`,
                         defaultMessage: metaDescription,
                         message: metaDescription
                     },
                     {
-                        id: `staticPage${id}.headerTitle`,
+                        id: `staticPage${id}.content`,
                         description: `Static page ${id} content`,
                         defaultMessage: content,
                         message: content

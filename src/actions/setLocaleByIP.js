@@ -14,23 +14,29 @@ export function setLocaleByIP() {
             });
             const values = await resp.json();
 
-            let match = document.cookie.match(/(^| )lang=([^;]+)/);
-            if (!match) {
+            // let match = document.cookie.match(/(^| )lang=([^;]+)/);
+
+            // if (!match) {
 
             const countryLanguages = values.languages.split(",");
+            let localeFound = false;
             for (let i = 0; i < countryLanguages.length; i++) {
               for (let j = 0; j < locales.length ; j++) {
                 if (locales[j].substring(0, 2) == countryLanguages[i].substring(0, 2)) {
                   dispatch(setLocale({locale: locales[j]}));
+                  localeFound = true;
                   break;
                 }
               }
+              if (localeFound) break;
             }
+
+            if (!localeFound) dispatch(setLocale({locale: "en-US"}));
 
             if (values.status) {
                 return true;
             }
-          }
+          // }
         } catch (error) {
             console.log('error', error);
         }

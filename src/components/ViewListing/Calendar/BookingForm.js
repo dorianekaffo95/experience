@@ -235,6 +235,7 @@ class BookingForm extends Component {
                   minimumNights={/*minNight*/ 0}
                   maximumNights={maxNight}
                   blockedDates={blockedDates}
+                  displayFormat={"DD/MM/yyyy"}
                   formName={"BookingForm"}
                   maxDaysNotice={maxDaysNotice}
                 />

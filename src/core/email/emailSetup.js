@@ -11,10 +11,10 @@ var transporter = nodemailer.createTransport(smtpTransport({
         user: emailConfig.email,
         pass: emailConfig.password
     },
-    tls: {
-        // do not fail on invalid certs
-        rejectUnauthorized: emailConfig.tls
-    }
+    // tls: {
+    //     // do not fail on invalid certs
+    //     rejectUnauthorized: emailConfig.tls
+    // }
 }));
 
 const sendEmail = (app) => {
@@ -23,9 +23,11 @@ const sendEmail = (app) => {
         let mailOptions = req.body.mailOptions;
         transporter.sendMail(mailOptions, (error, info) => {
             if (error) {
+                console.error("Error while sending link: ", error);
                 res.send({ status: 400, response: error });
             }
-            res.send({ status: 200, response: 'email send successfully' });
+            console.log("OK", info);
+            res.send({ status: 200, response: 'email sent successfully' });
         });
     });
 

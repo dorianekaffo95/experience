@@ -405,8 +405,6 @@ class Location extends Component {
     const { formatMessage } = this.props.intl;
     const { hideSuggestInput } = this.state;
 
-    console.log("Location state values: ", isLocationChosen, isExistingList);
-
     return (
       <Grid fluid>
         <Row className={s.landingContainer}>

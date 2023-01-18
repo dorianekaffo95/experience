@@ -226,6 +226,7 @@ class Transaction extends React.Component {
                   defaultPageSize={5}
                   change={this.paginationData}
                   componentReference={page}
+                  ofLabel={formatMessage(messages.of)}
                   paginationLabel={formatMessage(messages.transactions)}
                 />
               </div>

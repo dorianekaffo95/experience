@@ -18,6 +18,10 @@ function localUrl(url) {
 }
 
 function localFetch(url, options) {
+  return fetch(localUrl(url), {...options, headers: {...options.headers, 'Authorization': 'Basic YWRtaW46c3VwZXJzZWNyZXQ='}});
+}
+
+export function noBasicAuthFetch(url, options) {
   return fetch(localUrl(url), options);
 }
 

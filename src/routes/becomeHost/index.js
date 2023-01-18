@@ -68,7 +68,6 @@ export default {
       }
       store.dispatch(getListingStepTwo(listId));
     } else {
-      console.log('Initiq');
       if (initialValuesLoaded != true || (mode && mode == "new")) {
         await store.dispatch(resetListingSteps());
         await store.dispatch(getListingSteps());

@@ -570,7 +570,7 @@ const SearchListing = {
         // {
         id: {
           $in: [
-            sequelize.literal(`SELECT listId FROM ExperienceTypes WHERE experienceTypeId in(${experienceTypes.toString()}) GROUP BY listId HAVING COUNT(listId) >= ${experienceTypes.length}`),
+            sequelize.literal(`SELECT listId FROM ExperienceType WHERE experienceTypeId in(${experienceTypes.toString()}) GROUP BY listId HAVING COUNT(listId) >= ${experienceTypes.length}`),
           ],
         },
         // }

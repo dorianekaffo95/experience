@@ -99,10 +99,17 @@ import pushNotificationRoutes from './core/pushNotifications/pushNotificationRou
 
 // Https
 import https from 'https';
-import fs from 'fs'; 
+import fs from 'fs';
+
+import basicAuth from 'express-basic-auth';
 
 const app = express();
 app.use(compression());
+
+app.use(basicAuth({
+    users: { 'admin': 'supersecret' },
+    challenge: true
+}));
 
 //
 // Tell any CSS tooling (such as Material UI) to use all vendor prefixes if the
@@ -115,24 +122,24 @@ process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0; // Needed to be rejected becaus
 // Register Node.js middleware
 // -----------------------------------------------------------------------------
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../public')));
 app.use('/images', express.static(path.join(__dirname, '../images')));
 app.use('/.well-known', express.static(path.join(__dirname, '../well-known')));
 app.use(cookieParser());
 app.use(requestLanguage({
   languages: locales,
   queryName: 'lang',
-  cookie: {
-    name: 'lang',
-    options: {
-      path: '/',
-      maxAge: 3650 * 24 * 3600 * 1000, // 10 years in miliseconds
-    },
-    url: '/lang/{language}',
-  },
+  // cookie: {
+  //   name: 'lang',
+  //   options: {
+  //     path: '/',
+  //     maxAge: 3650 * 24 * 3600 * 1000, // 10 years in miliseconds
+  //   },
+  //   url: '/lang/{language}',
+  // },
 }));
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-
+app.use(bodyParser.json())
 
 //
 // Authentication
@@ -441,7 +448,7 @@ models.sync().catch(err => console.error(err.stack)).then(() => {
     cert: fs.readFileSync('server.cert'),
   }, app)
   .listen(port, () => {
-    console.log(`The server is running at https://experience.primusevent.com/`);
+    console.log(`The server is running at https://visitmycellar.com/`);
     // console.log(`The server is running at https://localhost:${port}/`);
   })
 });
@@ -453,4 +460,3 @@ models.sync().catch(err => console.error(err.stack)).then(() => {
 // });
 
 /* eslint-enable no-console */
-console.log('Server')

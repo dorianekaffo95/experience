@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import { Table, Tr, Td } from 'reactable';
 import { connect } from 'react-redux';
+import { injectIntl } from 'react-intl';
 import { toastr } from 'react-redux-toastr';
 import moment from 'moment';
 import Confirm from 'react-confirm-bootstrap';
@@ -16,7 +17,7 @@ import {
 
 import messages from './messages';
 import { graphql, gql, compose } from 'react-apollo';
-import { FormattedMessage, injectIntl } from 'react-intl';
+
 // Style
 import cx from 'classnames';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
@@ -86,7 +87,7 @@ class ListingManagement extends React.Component {
   }
 
   render() {
-    const { intl, removeListing, title, addListToRecommended, removeListFromRecommended } = this.props;
+    const { intl: { formatMessage }, removeListing, title, addListToRecommended, removeListFromRecommended } = this.props;
     const { getAllListings: { loading, getAllListings } } = this.props;
     const { currentPage, searchList } = this.state;
 
@@ -200,7 +201,8 @@ class ListingManagement extends React.Component {
                   defaultCurrent={1}
                   defaultPageSize={10}
                   change={this.paginationData}
-                  paginationLabel={'Lists'}
+                  ofLabel={formatMessage(messages.of)}
+                  paginationLabel={formatMessage(messages.lists)}
                 />
               </div>
             }

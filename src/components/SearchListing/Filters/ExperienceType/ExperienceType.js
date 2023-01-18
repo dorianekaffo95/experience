@@ -246,7 +246,7 @@ class ExperienceType extends Component {
           <div className={s.searchFilterPopover} ref={this.setWrapperRef}>
             <div className={s.searchFilterPopoverContent}>
               <Field
-                name="experienceType"
+                name="experienceTypes"
                 component={this.checkboxHorizontalGroup}
                 options={experienceTypes}
               />
@@ -289,7 +289,7 @@ const selector = formValueSelector("SearchForm"); // <-- same as form name
 
 const mapState = (state) => ({
   fieldsSettingsData: state.listingFields.data,
-  experienceType: selector(state, "experienceType"),
+  experienceType: selector(state, "experienceTypes"),
 });
 
 const mapDispatch = {

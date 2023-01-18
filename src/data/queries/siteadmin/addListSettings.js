@@ -51,9 +51,11 @@ const addListSettings = {
       });
 
       const settingType = await ListSettingsTypes.findById(typeId);
-      console.log("Setting type: ", settingType);
+      const id = insertListSettings.id;
+      console.log("Setting type: ", settingType, insertListSettings);
 
       if (settingType.dataValues.fieldType == 'stringType') {
+
         await translate([
           {
               id: `listSetting${id}.itemName`,

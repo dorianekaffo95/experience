@@ -88,13 +88,13 @@ class ListingItem extends React.Component {
               {/* <Col xs={12} sm={12} md={12} className={cx(s.textEllipsis, s.infoPrice, s.infoText, s.maxwidth)}>
                 {roomType}
               </Col> */}
-              <Col xs={12} sm={12} md={12} className={cx(s.space1, s.textEllipsis, s.infoDesc, s.infoText, s.infoSpace)}>
+              {/* <Col xs={12} sm={12} md={12} className={cx(s.space1, s.textEllipsis, s.infoDesc, s.infoText, s.infoSpace)}>
                 <div className={cx(s.listingInfo)}>
                   <span>{roomType}</span>
                   <span>&nbsp;&#183;&nbsp;</span>
                   <span>{beds} {bedsLabel}</span>
                 </div>
-              </Col>
+              </Col> */}
               <Col xs={12} sm={12} md={12} className={cx(s.textEllipsis, s.infoTitle, s.infoText)}>
                 <div className={s.displayInline}>
                   {

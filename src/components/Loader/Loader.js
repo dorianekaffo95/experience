@@ -50,8 +50,9 @@ class Loader extends React.Component {
             handleClick={handleClick}
             className={className}
             disabled={disabled}
-            spinnerColor={spinnerColor}
-          />
+            spinnerColor={spinnerColor}>
+              {children}
+            </ButtonLoader>
         }
         {
           type === "circle" && <CircleLoader show={show} />

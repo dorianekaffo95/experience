@@ -78,7 +78,7 @@ class NavigationAfterLogin extends React.Component {
       setUserLogout,
       wishListModal,
     } = this.props;
-    const { formatMessage } = this.props.intl;
+    const { formatMessage, locale } = this.props.intl;
     const {
       userData,
       openLanguageSwitcherModal,
@@ -130,7 +130,7 @@ class NavigationAfterLogin extends React.Component {
           <FormattedMessage {...messages.dashboard} />
         </NavLink>
         <NavLink to="" onClick={openLanguageSwitcherModal}>
-          <LanguageNavLink />
+          <LanguageNavLink locale={locale} />
         </NavLink>
         <NavLink to="" onClick={openCurrencySwitcherModal}>
           <CurrencyNavLink />
@@ -152,7 +152,7 @@ class NavigationAfterLogin extends React.Component {
             <FormattedMessage {...messages.yourReservations} />
           </MenuItemLink>
           {/* '/store' */}
-          <MenuItemLink to="http://licence.primusevent.com/">
+          <MenuItemLink to="http://licence.visitmycellar.com/">
             <FormattedMessage {...messages.createStore} />
           </MenuItemLink>
           <MenuItemLink to="/user/transaction">
@@ -178,7 +178,7 @@ class NavigationAfterLogin extends React.Component {
           <FormattedMessage {...messages.trips} />
         </NavLink>
         {/* '/store' */}
-        <NavLink to="http://store.primusevent.com">
+        <NavLink to="http://store.visitmycellar.com">
           <FormattedMessage {...messages.store} />
         </NavLink>
         <NavLink to="/rooms" className={cx("visible-xs", s.breakPointScreen)}>

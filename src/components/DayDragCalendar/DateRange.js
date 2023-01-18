@@ -16,6 +16,7 @@ import s from '!isomorphic-style-loader!css-loader!sass-loader!react-dates/lib/c
 import { DateRangePicker } from 'react-dates';
 class DateRange extends React.Component {
     static propTypes = {
+        displayFormat: PropTypes.string
     };
 
     constructor(props) {
@@ -89,6 +90,7 @@ class DateRange extends React.Component {
 
 
     render() {
+        const { displayFormat } = this.props;
         const { focusedInput, startDate, endDate, isCurrentStatus } = this.state;
 
         return (
@@ -104,6 +106,7 @@ class DateRange extends React.Component {
                     startDatePlaceholderText={"Start Date"}
                     endDatePlaceholderText={"End Date"}
                     hideKeyboardShortcutsPanel
+                    displayFormat={displayFormat}
                     onFocusChange={focusedInput => this.setState({ focusedInput })}
                     readOnly
                 />

@@ -32,7 +32,7 @@ const downloadRoute = app => {
 						sharp(destination)
 							.rotate()
 							.resize(100, 100)
-							.crop(sharp.strategy.entropy)
+							.trim(sharp.strategy.entropy)
 							.toFile(profilePhotouploadDir + 'small_' + filename, function (err) {
 								console.log("Error from resizing files", err);
 								if (destination) {
@@ -48,7 +48,7 @@ const downloadRoute = app => {
 						sharp(destination)
 							.rotate()
 							.resize(255, 255)
-							.crop(sharp.strategy.entropy)
+							.trim(sharp.strategy.entropy)
 							.toFile(profilePhotouploadDir + 'medium_' + filename, function (err) {
 								console.log("Error from resizing files", err);
 								if (destination) {

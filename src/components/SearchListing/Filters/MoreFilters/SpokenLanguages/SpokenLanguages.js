@@ -119,10 +119,14 @@ class SpokenLanguages extends React.Component {
                         <Image style={{
                             height: "2em",
                             padding: "0px 10px"
-                          }} src={`/flags/${countryCodes[language.itemName].toLowerCase()}.svg`}
+                          }} src={`/flags/${language.otherItemName ? language.otherItemName.toLowerCase() : '_generic'}.svg`}
                           alt={language.itemName}
                         />
-                        <span style={{ fontWeight: 100 }}>{language.itemName}</span>
+                        <span style={{ fontWeight: 100 }}>
+                          
+                        {messages[`listSetting${language.id}ItemName`] ? <FormattedMessage {...messages[`listSetting${language.id}ItemName`]} /> : this.props.intl.messages[`listSetting${language.id}.itemName`]}
+                   
+                        </span>
                       </label>
                     </div>
                     <div style={{ display: "table-row" }}>
@@ -208,10 +212,12 @@ class SpokenLanguages extends React.Component {
                   <Image style={{
                       height: "2em",
                       padding: "0px 10px"
-                    }} src={`/flags/${countryCodes[language.itemName].toLowerCase()}.svg`}
+                    }} src={`/flags/${language.otherItemName ? language.otherItemName.toLowerCase() : '_generic'}.svg`}
                     alt={language.itemName}
                   />
-                  <span style={{ fontWeight: 100 }}>{language.itemName}</span>
+                  <span style={{ fontWeight: 100 }}>
+                  {messages[`listSetting${language.id}ItemName`] ? <FormattedMessage {...messages[`listSetting${language.id}ItemName`]} /> : this.props.intl.messages[`listSetting${language.id}.itemName`]}
+                    </span>
                 </label>
             </div>
             <div style={{ display: "table-row" }}>

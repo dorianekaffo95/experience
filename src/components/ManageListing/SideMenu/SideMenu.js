@@ -37,7 +37,7 @@ class SideMenu extends React.Component {
             </Link>
           </li>
           <li>
-            <Link to={"http://store.primusevent.com/my-account/"} className={s.sideNavitem}>
+            <Link to={"http://store.visitmycellar.com/my-account/"} className={s.sideNavitem}>
               <FormattedMessage {...messages.createStore} />
             </Link>
           </li>

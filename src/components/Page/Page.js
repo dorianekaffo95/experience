@@ -4,22 +4,27 @@ import PropTypes from 'prop-types';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Page.css';
 
+import { injectIntl } from 'react-intl';
+
 class Page extends React.Component {
   static propTypes = {
-    title: PropTypes.string.isRequired,
-    html: PropTypes.string.isRequired,
+    title: PropTypes.string,
+    html: PropTypes.string,
+    id: PropTypes.number
   };
 
   render() {
-    const { title, html } = this.props;
+    const { messages } = this.props.intl;
+    const { title, html, id } = this.props;
     let addClass = 'ql-editor frontend';
+
     return (
       <div className={s.root}>
         <div className={s.container}>
-          <h1>{title}</h1>
+          <h1>{ id ? messages[`staticPage${id}.headerTitle`] : title }</h1>
           <div className={addClass}
             // eslint-disable-next-line react/no-danger
-            dangerouslySetInnerHTML={{ __html: html }}
+            dangerouslySetInnerHTML={{ __html: id ? `${messages[`staticPage${id}.content`]}` : html }}
           />
         </div>
       </div>
@@ -27,4 +32,4 @@ class Page extends React.Component {
   }
 }
 
-export default withStyles(s)(Page);
+export default injectIntl(withStyles(s)(Page));

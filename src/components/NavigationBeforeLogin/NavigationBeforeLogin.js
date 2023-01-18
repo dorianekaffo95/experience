@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 import cx from "classnames";
 import withStyles from "isomorphic-style-loader/lib/withStyles";
 import s from "./NavigationBeforeLogin.css";
@@ -46,6 +46,9 @@ class NavigationBeforeLogin extends React.Component {
       openLoginModal,
       openSignupModal,
     } = this.props;
+
+    const { locale } = this.props.intl;
+
     return (
       <div>
         <LoginModal />
@@ -58,7 +61,7 @@ class NavigationBeforeLogin extends React.Component {
             <FormattedMessage {...messages.home} />
           </NavLink>
           <NavLink to="#" onClick={openLanguageSwitcherModal}>
-            <LanguageNavLink />
+            <LanguageNavLink locale={locale}/>
           </NavLink>
           <NavLink to="#" onClick={openCurrencySwitcherModal}>
             <CurrencyNavLink />
@@ -67,7 +70,7 @@ class NavigationBeforeLogin extends React.Component {
             <FormattedMessage {...messages.becomeAHost} />
           </NavLink>
           {/* '/store' */}
-          <NavLink to="http://store.primusevent.com">
+          <NavLink to="http://store.visitmycellar.com">
             <FormattedMessage {...messages.store} />
           </NavLink>
           <NavLink to="/help">
@@ -85,4 +88,4 @@ class NavigationBeforeLogin extends React.Component {
   }
 }
 
-export default withStyles(s)(NavigationBeforeLogin);
+export default injectIntl(withStyles(s)(NavigationBeforeLogin));

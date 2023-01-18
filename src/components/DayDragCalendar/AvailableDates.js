@@ -234,29 +234,30 @@ class AvailableDates extends Component {
       // }
 
             // if (updatedStatus == '200') {
+              console.log('Experience hours updated: ');
       await change('blockedDates', updatedAvailableDatesDays);
-      await getListingDataStep3(listId);
-      await getListBlockedDates(
-                listId,
-                minNightValues,
-                maxNightValues,
-                checkInEndValue,
-                checkInStartValue,
-                houseRules,
-                isCancel,
-                isMaxDays,
-                isBooking,
-                basePrice,
-                cleaningPrice,
-                currency,
-            );
-      await getListingDataStep3(listId);
-      await manageListingSteps(listId, 3);
-      await resetCalendar();
+      // await getListingDataStep3(listId);
+      // await getListBlockedDates(
+      //           listId,
+      //           minNightValues,
+      //           maxNightValues,
+      //           checkInEndValue,
+      //           checkInStartValue,
+      //           houseRules,
+      //           isCancel,
+      //           isMaxDays,
+      //           isBooking,
+      //           basePrice,
+      //           cleaningPrice,
+      //           currency,
+      //       );
+      // await getListingDataStep3(listId);
+      // await manageListingSteps(listId, 3);
+      // await resetCalendar();
       await getExperienceHoursGeneral(
         listId,
-        moment(rangeStart).set("date", 1)
-        .format("YYYY-MM-DD"),
+        moment().isAfter(moment(rangeStart).set("date", 1)) ? moment().format("YYYY-MM-DD") : moment(rangeStart).set("date", 1)
+          .format("YYYY-MM-DD"),
         moment(rangeEnd || rangeStart).set("date", moment(rangeEnd || rangeStart).daysInMonth())
         .format("YYYY-MM-DD"),
         null

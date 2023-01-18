@@ -71,6 +71,16 @@ const messages = defineMessages({
     defaultMessage: 'Delete',
     description: 'Delete Button',
   },
+  of: {
+    id: "cellar.of",
+    defaultMessage: "Of",
+    description: "Of label"
+  },
+  users: {
+    id: "cellar.users",
+    defaultMessage: "Users",
+    description: "Users label"
+  }
 
 });
 

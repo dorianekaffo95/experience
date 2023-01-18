@@ -1,4 +1,4 @@
-import { Listing, ExperienceHours, Reservation } from '../../models';
+import { Listing, ExperienceHours, ListBlockedDates, Reservation } from '../../models';
 import ExperienceHourType from "../../types/ExperienceHourType";
 
 import {
@@ -41,11 +41,39 @@ const deleteCalendar = {
                     }
                 }
             });
+            
+            console.log("============================== Reservation: ", reservation, !reservation);
 
             if (!reservation) {
-                const removeExperienceHour = await ExperienceHours.destroy({
-                    where: { listId, id: experienceHourId}
+
+
+                const experienceHour = await ExperienceHours.findById(experienceHourId);
+                
+                const datePart = experienceHour.date.toISOString().substring(0, 10);
+
+                await ExperienceHours.destroy({
+                    where: { listId, id: experienceHourId }
                 });
+
+                const relatedExpHours = await ExperienceHours.count({
+                  where: {
+                    date: {
+                      $between: [`${datePart} 00:00:00`, `${datePart} 23:59:59`] 
+                    },
+                    listId
+                  }
+                });
+
+                if (relatedExpHours == 0) {
+                  await ListBlockedDates.destroy({
+                    where: {
+                      blockedDates: {
+                        $between: [`${datePart} 00:00:00`, `${datePart} 23:59:59`] 
+                      },
+                      listId
+                    }
+                  });
+                }
 
                 return {
                     status: '200'

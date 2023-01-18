@@ -23,9 +23,13 @@ import {
   Button,
   FormGroup,
   FormControl,
+  Image,
   Col,
   Row,
 } from 'react-bootstrap';
+
+// Country Codes
+import countryCodes from './countryCodes.json';
 
 class AddListSettingsForm extends Component {
 
@@ -81,6 +85,35 @@ class AddListSettingsForm extends Component {
     );
   }
 
+  renderFormControlSelect = ({ input, label, meta: { touched, error }, children, className }) => {
+    const { formatMessage } = this.props.intl;
+    return (
+      <FormGroup>
+        {touched && error && <span className={s.errorMessage}>{formatMessage(error)}</span>}
+        <div style={{display: 'flex'}}>
+          <div style={{lineHeight: '40px'}}>
+          <Image style={{
+                      height: "2em",
+                      padding: "0px 10px"
+                    }} src={`/flags/${input.value ? input.value.toLowerCase() : '_generic'}.svg`}
+                    alt={input.value}
+                  />
+          </div>
+          <div style={{flex: 1}}>
+          <FormControl
+          {...input}
+          className={className}
+          componentClass="select"
+          placeholder={label}
+        >
+          {children}
+        </FormControl>
+          </div>
+        </div>
+      </FormGroup>
+    );
+  }
+
   render() {
     const { error, handleSubmit, submitting, dispatch, typeId, initialValues } = this.props;
     const { formatMessage } = this.props.intl;
@@ -106,6 +139,20 @@ class AddListSettingsForm extends Component {
                 label={formatMessage(messages.addNewDescription)}
                 className={cx(s.formControlInput, s.space3)}
               />
+            </FormGroup>
+          }
+
+          {
+            typeId && (typeId == 20) && <FormGroup className={s.formGroup}>
+              <Field
+                name="otherItemName"
+                type="select"
+                component={this.renderFormControlSelect}
+                label={formatMessage(messages.selectCountryCode)}
+                className={cx(s.formControlInput, s.space3)}
+              >
+                {countryCodes.map((countryCode) => (<option value={countryCode.code}>{countryCode.code} - {countryCode.name}</option>))}
+              </Field>
             </FormGroup>
           }
 

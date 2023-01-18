@@ -23,14 +23,14 @@ import Faq from "./question.svg";
 class PaymentDetails extends Component {
   static propTypes = {
     basePrice: PropTypes.number.isRequired,
-    cleaningPrice: PropTypes.number,
     currency: PropTypes.string.isRequired,
     dayDifference: PropTypes.number.isRequired,
-    discount: PropTypes.number,
-    discountType: PropTypes.string,
     priceForDays: PropTypes.number.isRequired,
     serviceFees: PropTypes.number.isRequired,
     total: PropTypes.number.isRequired,
+    cleaningPrice: PropTypes.number,
+    discount: PropTypes.number,
+    discountType: PropTypes.string,
     formatMessage: PropTypes.any,
     bookingSpecialPricing: PropTypes.array,
     isSpecialPriceAssigned: PropTypes.bool,
