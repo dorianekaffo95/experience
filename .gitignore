@@ -11,4 +11,5 @@ website.pdf
 package-lock.json
 yarn.lock
 yarn-error.log
+.env
 
